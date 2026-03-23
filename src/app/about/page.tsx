@@ -10,7 +10,7 @@ const eduData = {
     {
       abbr: 'CE', school: 'China Europe International Business School (CEIBS)', prog: 'Global MBA (Full-Time)', period: '2026–2027', loc: 'Shanghai, China',
       url: 'https://www.ceibs.edu',
-      imgs: ['/gallery/ceibs.jpg'],
+      imgs: ['/gallery/中欧国际工商学院.jpg'],
       detail: `Founded in 1994 through a partnership between the Chinese government and the European Commission, CEIBS (中欧国际工商学院) is Asia's #1 business school — ranked #1 in Asia and #8 globally by the Financial Times MBA Rankings 2026. Headquartered in Shanghai's Pudong district with campuses in Beijing, Shenzhen, Zurich, and Accra, CEIBS is the only business school in mainland China accredited by both EQUIS and AACSB.\n\nThe CEIBS Full-Time MBA is a 16-month intensive program built around the philosophy of "China Depth, Global Breadth." The curriculum includes 16 core courses and 40+ electives spanning finance, strategy, operations, and entrepreneurship, supplemented by an Integration Consulting Project and international exchange modules at 40+ elite partner schools worldwide. With a community of 30,000+ alumni across 90+ countries, the program develops leaders who can navigate the intersection of China's economy and global business.`
     },
     {
@@ -42,7 +42,7 @@ const eduData = {
     {
       abbr: 'CE', school: '中欧国际工商学院（CEIBS）', prog: '全球工商管理硕士（MBA）', period: '2026–2027', loc: '上海',
       url: 'https://www.ceibs.edu',
-      imgs: ['/gallery/ceibs.jpg'],
+      imgs: ['/gallery/中欧国际工商学院.jpg'],
       detail: `中欧国际工商学院（CEIBS）创立于1994年，由中国政府与欧盟共同发起，是亚洲排名第一的商学院——2026年《金融时报》全球MBA排名中位居亚洲第一、全球第八。总部位于上海浦东，另设北京、深圳、苏黎世和加纳阿克拉校区，是中国大陆唯一同时获得EQUIS和AACSB双重认证的商学院。\n\n中欧全日制MBA为16个月密集项目，以"中国深度、全球广度"为核心理念。课程体系涵盖16门核心课和40余门选修课，横跨金融、战略、运营与创业，并配备整合咨询项目和全球40余所合作院校的交流模块。30,000+名校友遍布90+个国家，项目致力于培养站在中国经济与全球商业交汇点的领袖人才。`
     },
     {
@@ -81,7 +81,30 @@ const langs = [
   { name: 'Français', level: 'Basic', pct: 30, color: '#aeaeb2' },
 ];
 
-const skills = ['Python', 'Stata', 'R Studio', 'LaTeX', 'MS Office', 'Machine Learning', 'Econometrics', 'Policy Evaluation', 'Data Visualization'];
+const skillsDetailed = {
+  en: [
+    { name: 'Python', color: '#3776ab', detail: 'Data analysis, web scraping, automation. Used for policy research data processing, ML model implementation (scikit-learn), and building the Tevo A.I. data pipeline. Libraries: pandas, numpy, matplotlib.' },
+    { name: 'Stata', color: '#1a5276', detail: 'Primary econometrics tool. Applied OLS, IV, DID, and PSM in UNDP China research. Used NBER trade database for regression modeling on China-US bilateral trade flows.' },
+    { name: 'R Studio', color: '#276dc3', detail: 'Statistical computing & visualization. Used at UChicago Harris for the Data & Policy capstone — R + ggplot2 for analyzing socioeconomic factors affecting US voting behavior. Also used for academic replication packages at HKU AI Centre.' },
+    { name: 'LaTeX', color: '#555', detail: 'Academic typesetting for policy papers. Used for the 港澳药械通 policy analysis report (planned for publication in Hong Kong & Macao Studies journal). Managed via Overleaf for collaborative editing.' },
+    { name: 'MS Office', color: '#d83b01', detail: 'Advanced Excel for data analysis and financial modeling, PowerPoint for policy presentations and consulting decks (including UNDP briefings and the Tevo investor pitch). Word for formal research reports.' },
+    { name: 'Machine Learning', color: '#e44d26', detail: 'Applied in two contexts: (1) HKU AI Centre — building an ML-based methods database from 260+ academic papers; (2) Tevo A.I. — clustering & data mining for market evidence extraction, ML certainty scoring (0–1), and RecSys for the AI Waiter.' },
+    { name: 'Econometrics', color: '#1d8348', detail: 'Intermediate to advanced methods: OLS, IV, DID, PSM. Coursework: Intermediate Econometrics + Quantitative Methods for Policy Evaluation at CUHK-Shenzhen. Applied in UNDP policy research and HKU AI Centre replication work.' },
+    { name: 'Policy Evaluation', color: '#0071e3', detail: 'Quantitative & qualitative policy analysis. Applied at UNDP (regression-based trade policy impact), GBA Institute (regional development), State Council DRC (enterprise going-out tracking), and HK-Macao Association (healthcare governance — 港澳药械通).' },
+    { name: 'Data Visualization', color: '#8e44ad', detail: 'Tools: ggplot2 (R), matplotlib (Python), Chart.js / Recharts (web). Applied in UChicago Harris voting behavior analysis and Student Dashboard project (GPA charts, competency radar charts, credit progress visualization).' },
+  ],
+  cn: [
+    { name: 'Python', color: '#3776ab', detail: '数据分析、网络爬取、自动化。用于政策研究数据处理、ML模型实现（scikit-learn）以及构建Tevo A.I.数据管道。常用库：pandas、numpy、matplotlib。' },
+    { name: 'Stata', color: '#1a5276', detail: '计量经济学主要工具。在UNDP中国项目中应用OLS、IV（工具变量）、DID（双重差分）和PSM（倾向得分匹配）。使用NBER贸易数据库对中美双边贸易流进行回归建模。' },
+    { name: 'R Studio', color: '#276dc3', detail: '统计计算与数据可视化。在芝加哥大学哈里斯学院顶点项目中使用R + ggplot2分析社会经济因素对美国投票行为的影响。也用于港大AI中心的学术文献复现包研究。' },
+    { name: 'LaTeX', color: '#555', detail: '用于政策论文和研究报告的学术排版。用于"港澳药械通"政策分析报告（计划发表于《港澳研究》杂志）及其他正式学术输出。通过Overleaf进行协作编辑。' },
+    { name: 'MS Office', color: '#d83b01', detail: '高级Excel用于数据分析与财务建模，PowerPoint用于政策演示和咨询幻灯片（包括UNDP简报和Tevo投资人路演），Word用于正式研究报告撰写。' },
+    { name: '机器学习', color: '#e44d26', detail: '在两个场景中应用：(1) 港大AI中心——从260+篇学术论文构建ML分析方法数据库；(2) Tevo A.I.——用于市场证据提取的聚类与数据挖掘、ML确定性评分（0-1），以及AI服务生的推荐系统。' },
+    { name: '计量经济学', color: '#1d8348', detail: '中高级计量方法：OLS、IV、DID、PSM。课程：港中深中级计量经济学 + 政策评估量化方法。应用于UNDP政策研究和港大AI中心文献复现工作。' },
+    { name: '政策评估', color: '#0071e3', detail: '定量和定性政策分析框架。应用于UNDP（基于回归的贸易政策影响）、大湾区研究院（区域发展政策）、国务院发展研究中心（企业出海政策跟踪）和港澳台发展研究协会（医疗治理——港澳药械通）。' },
+    { name: '数据可视化', color: '#8e44ad', detail: '工具：ggplot2（R）、matplotlib（Python）、Chart.js/Recharts（Web）。应用于芝加哥大学投票行为数据分析和学业仪表盘项目（GPA分布图、能力雷达图、学分进度可视化）。' },
+  ],
+};
 
 const aboutCards = {
   en: [
@@ -130,8 +153,10 @@ function ImageCarousel({ imgs }: { imgs: string[] }) {
 export default function About() {
   const { lang, setLang } = useLanguage();
   const [selEdu, setSelEdu] = useState<number | null>(null);
+  const [selSkill, setSelSkill] = useState<number | null>(null);
   const edu = eduData[lang];
   const cards = aboutCards[lang];
+  const skills = skillsDetailed[lang];
 
   return (
     <div style={{ background: '#fff', minHeight: '100vh' }}>
@@ -212,11 +237,29 @@ export default function About() {
           <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#86868b', paddingBottom: 12, borderBottom: '0.5px solid rgba(0,0,0,0.08)', marginBottom: 16 }}>
             {lang === 'en' ? 'Technical Skills' : '技能工具'}
           </p>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
-            {skills.map((s, i) => (
-              <span key={i} style={{ fontSize: 13, fontWeight: 500, color: '#1d1d1f', background: '#f5f5f7', border: '0.5px solid rgba(0,0,0,0.08)', padding: '7px 16px', borderRadius: 100 }}>{s}</span>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 0 }}>
+            {skills.map((sk, i) => (
+              <button
+                key={i}
+                onClick={() => setSelSkill(selSkill === i ? null : i)}
+                style={{
+                  fontSize: 13, fontWeight: 500, padding: '7px 16px', borderRadius: 100,
+                  cursor: 'pointer', border: '0.5px solid', transition: 'all 0.2s',
+                  background: selSkill === i ? sk.color : '#f5f5f7',
+                  borderColor: selSkill === i ? sk.color : 'rgba(0,0,0,0.08)',
+                  color: selSkill === i ? '#fff' : '#1d1d1f',
+                }}
+              >
+                {sk.name}
+              </button>
             ))}
           </div>
+          {selSkill !== null && (
+            <div style={{ marginTop: 14, background: `${skills[selSkill].color}10`, border: `0.5px solid ${skills[selSkill].color}40`, borderRadius: 14, padding: '14px 18px' }}>
+              <div style={{ fontSize: 11, fontWeight: 700, color: skills[selSkill].color, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 7 }}>{skills[selSkill].name}</div>
+              <p style={{ fontSize: 13, color: '#4a4a4a', lineHeight: 1.75, margin: 0 }}>{skills[selSkill].detail}</p>
+            </div>
+          )}
         </div>
       </main>
 
