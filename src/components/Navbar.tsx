@@ -1,44 +1,17 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-
-type Language = 'en' | 'cn';
-
-const labels = {
-  en: { about: 'About', experience: 'Experience', research: 'Research', campus: 'Campus', ai: 'AI', photos: 'Photos', contact: 'Contact' },
-  cn: { about: '关于', experience: '经历', research: '科研', campus: '校园', ai: 'AI', photos: '相册', contact: '联系' },
-};
-
-const drops = {
-  en: {
-    about: [{ t: 'Introduction', h: '/about' }, { t: 'Education', h: '/about#education' }, { t: 'Languages & Skills', h: '/about#skills' }],
-    experience: [{ t: 'State Council DRC', h: '/experience?i=0' }, { t: 'HKU Centre for AI', h: '/experience?i=1' }, { t: 'NetEase Interactive', h: '/experience?i=2' }, { t: 'UN Youth Program', h: '/experience?i=3' }, { t: 'UNDP China', h: '/experience?i=4' }, { t: 'Rongtai VC', h: '/experience?i=5' }],
-    research: [{ t: 'Healthcare Governance GBA', h: '/research?i=0' }, { t: 'Cross-border Education', h: '/research?i=1' }, { t: 'WVS Social Survey', h: '/research?i=2' }, { t: 'China-US Trade Policy', h: '/research?i=3' }],
-    campus: [{ t: 'Cantonese Club', h: '/campus?i=0' }, { t: 'Economics Club', h: '/campus?i=1' }, { t: '"Go South" Project', h: '/campus?i=2' }],
-    ai: [{ t: 'AI Tools Stack', h: '/ai' }, { t: 'Academic Dashboard', h: '/ai?i=0' }, { t: 'Tevo A.I. System', h: '/ai?i=1' }],
-    photos: [{ t: 'All Photos', h: '/photos' }],
-    contact: [{ t: 'Email & Phone', h: '/contact' }],
-  },
-  cn: {
-    about: [{ t: '个人介绍', h: '/about' }, { t: '教育背景', h: '/about#education' }, { t: '语言与技能', h: '/about#skills' }],
-    experience: [{ t: '国务院发展研究中心', h: '/experience?i=0' }, { t: '香港大学AI中心', h: '/experience?i=1' }, { t: '网易互娱', h: '/experience?i=2' }, { t: '联合国青年项目', h: '/experience?i=3' }, { t: 'UNDP中国', h: '/experience?i=4' }, { t: '融泰私募', h: '/experience?i=5' }],
-    research: [{ t: '粤港澳医疗治理', h: '/research?i=0' }, { t: '港澳高校内地办学', h: '/research?i=1' }, { t: '新时代社会治理调查', h: '/research?i=2' }, { t: '中美贸易政策', h: '/research?i=3' }],
-    campus: [{ t: '粤语社', h: '/campus?i=0' }, { t: '经济学会', h: '/campus?i=1' }, { t: '"下南洋"项目', h: '/campus?i=2' }],
-    ai: [{ t: 'AI工具栈', h: '/ai' }, { t: '学业仪表盘项目', h: '/ai?i=0' }, { t: 'Tevo A.I. 系统', h: '/ai?i=1' }],
-    photos: [{ t: '全部照片', h: '/photos' }],
-    contact: [{ t: '邮件与电话', h: '/contact' }],
-  },
-};
-
-const navItems = ['about', 'experience', 'research', 'campus', 'ai', 'photos', 'contact'] as const;
+import { navDropdowns, navItems, navLabels } from '../data/navigation';
+import type { Language } from '../types/language';
 
 export default function Navbar({ lang, setLang, currentPage, dark = false }: { lang: Language; setLang: (l: Language) => void; currentPage: string; dark?: boolean; }) {
   const [hovered, setHovered] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
-  const t = labels[lang];
-  const d = drops[lang];
+  const t = navLabels[lang];
+  const d = navDropdowns[lang];
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 20);
@@ -60,7 +33,7 @@ export default function Navbar({ lang, setLang, currentPage, dark = false }: { l
     <nav style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100, background: bg, backdropFilter: scrolled ? 'saturate(180%) blur(20px)' : 'none', WebkitBackdropFilter: scrolled ? 'saturate(180%) blur(20px)' : 'none', borderBottom: `0.5px solid ${border}`, transition: 'background 0.3s, border-color 0.3s' }}>
       <div style={{ maxWidth: 980, margin: '0 auto', padding: '0 24px', height: 44, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 8, textDecoration: 'none' }}>
-          <img src="/avatar.jpg" style={{ width: 24, height: 24, borderRadius: '50%', objectFit: 'cover' }} alt="" />
+          <Image src="/avatar.jpg" width={24} height={24} style={{ borderRadius: '50%', objectFit: 'cover' }} alt="" />
           <span style={{ fontSize: 14, fontWeight: 600, color: textColor, letterSpacing: '-0.01em' }}>{lang === 'cn' ? '黄一健' : 'Yijian'}</span>
         </Link>
         <div style={{ display: 'flex' }}>
