@@ -20,7 +20,7 @@ export default function Photos() {
       <div className="vision-hero-card liquid-glass-panel" style={{ maxWidth: 760, margin: '0 auto', padding: '100px 24px 48px', textAlign: 'center' }}>
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#2997ff', marginBottom: 16 }}>Gallery</motion.p>
         <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 }}
-          style={{ fontSize: 'clamp(40px,6vw,68px)', fontWeight: 700, color: '#f5f5f7', letterSpacing: '-0.03em', lineHeight: 1.0, marginBottom: 16 }}>
+          style={{ fontSize: 'clamp(40px,6vw,68px)', fontWeight: 700, color: '#f5f5f7', letterSpacing: 0, lineHeight: 1.0, marginBottom: 16 }}>
           {lang === 'en' ? 'Photos' : '相册'}
         </motion.h1>
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.15 }}

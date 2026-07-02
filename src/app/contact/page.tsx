@@ -25,46 +25,44 @@ export default function Contact() {
   return (
     <VisionPageShell accent="#ff375f">
       <Navbar lang={lang} setLang={setLang} currentPage="contact" />
-      <main style={{ paddingTop: 100, paddingBottom: 100 }}>
-        <div style={{ maxWidth: 560, margin: '0 auto', padding: '0 24px' }}>
-          <div className="vision-hero-card liquid-glass-panel liquid-glass-panel--light" style={{ textAlign: 'center', marginBottom: 60, padding: '36px 24px' }}>
-            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#2997ff', marginBottom: 16 }}>Connect</motion.p>
-            <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 }}
-              style={{ fontSize: 'clamp(36px,5vw,52px)', fontWeight: 700, color: '#1d1d1f', letterSpacing: '-0.03em', lineHeight: 1.05, marginBottom: 16 }}>
+      <main className="apple-section" style={{ paddingTop: 112 }}>
+        <div className="apple-container">
+          <div className="vision-hero-card liquid-glass-panel liquid-glass-panel--light" style={{ textAlign: 'center', marginBottom: 26, padding: '52px 24px', borderRadius: 32 }}>
+            <motion.p className="apple-eyebrow" initial={{ opacity: 0 }} animate={{ opacity: 1 }} style={{ color: '#ff375f', marginBottom: 16 }}>{lang === 'en' ? 'Connect' : '联系'}</motion.p>
+            <motion.h1 className="apple-display-title" initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 }}
+              style={{ fontSize: 'clamp(42px,6vw,72px)', color: '#1d1d1f', marginBottom: 16 }}>
               {lang === 'en' ? 'Get in Touch' : '联系我'}
             </motion.h1>
-            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.15 }}
-              style={{ fontSize: 17, fontWeight: 300, color: '#6e6e73' }}>
+            <motion.p className="apple-centered-copy" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.15 }}
+              style={{ fontSize: 17, fontWeight: 360, color: '#6e6e73', maxWidth: 580, margin: '0 auto', lineHeight: 1.7 }}>
               {lang === 'en' ? "I'd love to hear from you." : '期待与你的交流。'}
             </motion.p>
           </div>
 
-          <div className="vision-list-panel liquid-glass-panel liquid-glass-panel--light" style={{ borderRadius: 22, overflow: 'hidden', border: '0.5px solid rgba(0,0,0,0.08)' }}>
+          <div className="contact-grid">
             {contactItems.map((item, i) => (
-              <motion.div key={i} className="vision-interactive-card" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.08 + 0.2 }}>
+              <motion.div key={item.id} className="vision-interactive-card" initial={{ opacity: 0, y: 18, filter: 'blur(8px)' }} animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }} transition={{ delay: i * 0.08 + 0.2 }}>
                 {item.href ? (
-                  <a href={item.href}
-                    style={{ display: 'flex', alignItems: 'center', gap: 16, padding: '18px 22px', textDecoration: 'none', borderBottom: i < contactItems.length - 1 ? '0.5px solid rgba(0,0,0,0.06)' : 'none', background: 'rgba(255,255,255,0.22)', transition: 'background 0.15s' }}
-                    onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.5)' }}
-                    onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.22)' }}>
-                    <div className="liquid-glass-button liquid-glass-button--light" style={{ width: 40, height: 40, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                      <ContactIcon item={item.id} />
+                  <a href={item.href} className="contact-tile liquid-glass-panel liquid-glass-panel--light">
+                    <div>
+                      <div className="contact-icon-wrap liquid-glass-button liquid-glass-button--light">
+                        <ContactIcon item={item.id} />
+                      </div>
+                      <div className="apple-eyebrow" style={{ color: '#86868b', marginBottom: 10 }}>{item.label[lang]}</div>
+                      <div className="apple-centered-copy" style={{ fontSize: 17, fontWeight: 650, color: '#1d1d1f', lineHeight: 1.45, overflowWrap: 'anywhere' }}>{item.value[lang]}</div>
                     </div>
-                    <div style={{ flex: 1 }}>
-                      <div style={{ fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#aeaeb2', marginBottom: 3 }}>{item.label[lang]}</div>
-                      <div style={{ fontSize: 15, fontWeight: 500, color: '#1d1d1f' }}>{item.value[lang]}</div>
-                    </div>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#aeaeb2" strokeWidth="2"><path d="M9 18l6-6-6-6"/></svg>
+                    <span style={{ color: '#ff375f', fontSize: 12, fontWeight: 650 }}>{lang === 'en' ? 'Open' : '打开'}</span>
                   </a>
                 ) : (
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 16, padding: '18px 22px', borderBottom: i < contactItems.length - 1 ? '0.5px solid rgba(0,0,0,0.06)' : 'none', background: 'rgba(255,255,255,0.22)' }}>
-                    <div className="liquid-glass-button liquid-glass-button--light" style={{ width: 40, height: 40, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                      <ContactIcon item={item.id} />
-                    </div>
+                  <div className="contact-tile liquid-glass-panel liquid-glass-panel--light">
                     <div>
-                      <div style={{ fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#aeaeb2', marginBottom: 3 }}>{item.label[lang]}</div>
-                      <div style={{ fontSize: 15, fontWeight: 500, color: '#1d1d1f' }}>{item.value[lang]}</div>
+                      <div className="contact-icon-wrap liquid-glass-button liquid-glass-button--light">
+                      <ContactIcon item={item.id} />
+                      </div>
+                      <div className="apple-eyebrow" style={{ color: '#86868b', marginBottom: 10 }}>{item.label[lang]}</div>
+                      <div className="apple-centered-copy" style={{ fontSize: 17, fontWeight: 650, color: '#1d1d1f', lineHeight: 1.45 }}>{item.value[lang]}</div>
                     </div>
+                    <span style={{ color: '#ff375f', fontSize: 12, fontWeight: 650 }}>{lang === 'en' ? 'Based in Shanghai' : '上海'}</span>
                   </div>
                 )}
               </motion.div>
@@ -72,7 +70,8 @@ export default function Contact() {
           </div>
 
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }}
-            style={{ textAlign: 'center', fontSize: 13, color: '#aeaeb2', marginTop: 48 }}>
+            className="apple-centered-copy"
+            style={{ fontSize: 13, color: '#86868b', marginTop: 48 }}>
             {lang === 'en' ? 'Response within 24 hours · Open to research collaborations worldwide' : '24小时内回复 · 欢迎全球学术与业务合作'}
           </motion.p>
         </div>

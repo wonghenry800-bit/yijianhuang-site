@@ -34,7 +34,7 @@ export default function Navbar({ lang, setLang, currentPage, dark = false }: { l
       <div style={{ maxWidth: 980, margin: '0 auto', padding: '0 24px', height: 44, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 8, textDecoration: 'none' }}>
           <Image src="/avatar.jpg" width={24} height={24} style={{ borderRadius: '50%', objectFit: 'cover' }} alt="" />
-          <span style={{ fontSize: 14, fontWeight: 600, color: textColor, letterSpacing: '-0.01em' }}>{lang === 'cn' ? '黄一健' : 'Yijian'}</span>
+          <span style={{ fontSize: 14, fontWeight: 600, color: textColor, letterSpacing: 0 }}>{lang === 'cn' ? '黄一健' : 'Yijian'}</span>
         </Link>
         <div style={{ display: 'flex' }}>
           {navItems.map(key => (

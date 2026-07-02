@@ -21,7 +21,7 @@ export default function Campus() {
       <div className="vision-hero-card liquid-glass-panel" style={{ maxWidth: 760, margin: '0 auto', padding: '100px 24px 60px', textAlign: 'center' }}>
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#2997ff', marginBottom: 16 }}>Student Life</motion.p>
         <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 }}
-          style={{ fontSize: 'clamp(40px,6vw,68px)', fontWeight: 700, color: '#f5f5f7', letterSpacing: '-0.03em', lineHeight: 1.0, marginBottom: 16 }}>
+          style={{ fontSize: 'clamp(40px,6vw,68px)', fontWeight: 700, color: '#f5f5f7', letterSpacing: 0, lineHeight: 1.0, marginBottom: 16 }}>
           {lang === 'en' ? 'Campus Life' : '校园活动'}
         </motion.h1>
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}
@@ -42,7 +42,7 @@ export default function Campus() {
                 <Image src={publicImage(item.img)} alt={item.title} fill sizes="(max-width: 768px) 100vw, 360px" style={{ objectFit: 'cover', opacity: 0.8 }} onError={e => { (e.currentTarget as HTMLImageElement).style.display = 'none' }} />
               </div>
               <div style={{ padding: '16px 18px' }}>
-                <div style={{ fontSize: 13, fontWeight: 700, color: '#f5f5f7', letterSpacing: '-0.01em', marginBottom: 4 }}>{item.title}</div>
+                <div style={{ fontSize: 13, fontWeight: 700, color: '#f5f5f7', letterSpacing: 0, marginBottom: 4 }}>{item.title}</div>
                 <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.35)', marginBottom: 10 }}>{item.period}{item.present && <span style={{ display: 'inline-block', width: 5, height: 5, borderRadius: '50%', background: '#30d158', marginLeft: 6, verticalAlign: 'middle' }} />}</div>
                 <span style={{ fontSize: 10, fontWeight: 700, padding: '3px 10px', borderRadius: 100, background: item.color, color: '#fff' }}>{item.badge}</span>
               </div>
@@ -65,7 +65,7 @@ export default function Campus() {
               </div>
               <div style={{ padding: 28 }}>
                 <span style={{ fontSize: 10, fontWeight: 700, padding: '3px 10px', borderRadius: 100, background: data[sel].color, color: '#fff' }}>{data[sel].badge}</span>
-                <div style={{ fontSize: 20, fontWeight: 700, color: '#f5f5f7', letterSpacing: '-0.02em', marginTop: 12 }}>{data[sel].title}</div>
+                <div style={{ fontSize: 20, fontWeight: 700, color: '#f5f5f7', letterSpacing: 0, marginTop: 12 }}>{data[sel].title}</div>
                 <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.35)', marginTop: 4, display: 'flex', alignItems: 'center', gap: 6 }}>
                   {data[sel].period}{data[sel].present && <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#30d158', display: 'inline-block' }} />}
                 </div>

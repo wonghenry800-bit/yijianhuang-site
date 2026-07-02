@@ -26,7 +26,7 @@ export default function About() {
         <div className="vision-hero-card liquid-glass-panel liquid-glass-panel--light" style={{ maxWidth: 680, margin: '0 auto', padding: '36px 24px', textAlign: 'center', marginBottom: 80 }}>
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#2997ff', marginBottom: 16 }}>Profile</motion.p>
           <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 }}
-            style={{ fontSize: 'clamp(36px, 5vw, 56px)', fontWeight: 700, color: '#1d1d1f', letterSpacing: '-0.03em', lineHeight: 1.05, marginBottom: 18 }}>
+            style={{ fontSize: 'clamp(36px, 5vw, 56px)', fontWeight: 700, color: '#1d1d1f', letterSpacing: 0, lineHeight: 1.05, marginBottom: 18 }}>
             {lang === 'en' ? 'About Me' : '关于我'}
           </motion.h1>
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.15 }}
@@ -136,7 +136,7 @@ export default function About() {
               style={{ background: '#fff', borderRadius: 22, maxWidth: 560, width: '100%', overflow: 'hidden', border: '0.5px solid rgba(0,0,0,0.1)', boxShadow: '0 32px 80px rgba(0,0,0,0.25)' }}>
               <ImageCarousel imgs={edu[selEdu].imgs} alt={edu[selEdu].school} />
               <div style={{ padding: 28 }}>
-                <div style={{ fontSize: 20, fontWeight: 700, color: '#1d1d1f', letterSpacing: '-0.02em' }}>{edu[selEdu].school}</div>
+                <div style={{ fontSize: 20, fontWeight: 700, color: '#1d1d1f', letterSpacing: 0 }}>{edu[selEdu].school}</div>
                 <div style={{ fontSize: 13, color: '#2997ff', marginTop: 4 }}>{edu[selEdu].prog}</div>
                 <div style={{ fontSize: 12, color: '#aeaeb2', marginTop: 2 }}>{edu[selEdu].loc} · {edu[selEdu].period}</div>
                 <a href={edu[selEdu].url} target="_blank" rel="noopener noreferrer"

@@ -6,6 +6,13 @@ type HomeHeroContent = {
   t2: string;
   t3: string;
   sub: string;
+  introEyebrow: string;
+  introTitle: string;
+  introBody: string;
+  featuredEyebrow: string;
+  featuredTitle: string;
+  exploreEyebrow: string;
+  exploreTitle: string;
   cta1: string;
   cta2: string;
   scroll: string;
@@ -23,6 +30,21 @@ export type HomeSkill = {
   detail: string;
 };
 
+export type HomeFocusArea = {
+  title: string;
+  body: string;
+  href: string;
+  accent: string;
+};
+
+export type HomeFeaturedWork = {
+  label: string;
+  title: string;
+  body: string;
+  href: string;
+  accent: string;
+};
+
 export const homeContent: Record<Language, HomeHeroContent> = {
   en: {
     name: 'Yijian Huang',
@@ -30,6 +52,13 @@ export const homeContent: Record<Language, HomeHeroContent> = {
     t2: 'Policy.',
     t3: 'Impact.',
     sub: 'CUHK-Shenzhen · UChicago Harris · UN Geneva · State Council DRC',
+    introEyebrow: 'Personal operating system',
+    introTitle: 'Research, analysis, and AI tools in one workflow.',
+    introBody: 'I connect policy questions with data, field evidence, and product thinking — building work that can move from research notes to usable systems.',
+    featuredEyebrow: 'Selected directions',
+    featuredTitle: 'A portfolio built around public impact.',
+    exploreEyebrow: 'Explore more',
+    exploreTitle: 'Open any section and keep moving.',
     cta1: 'Explore my work',
     cta2: 'Get in touch',
     scroll: 'Scroll',
@@ -41,6 +70,13 @@ export const homeContent: Record<Language, HomeHeroContent> = {
     t2: '政策。',
     t3: '影响力。',
     sub: '港中深 · 芝加哥大学 · 联合国日内瓦 · 国务院发展研究中心',
+    introEyebrow: '个人工作系统',
+    introTitle: '把研究、分析与 AI 工具放进同一个工作流。',
+    introBody: '我把政策问题、数据证据、实地调研和产品思维连接起来，让研究不只停留在报告里，也能变成可使用的系统。',
+    featuredEyebrow: '精选方向',
+    featuredTitle: '围绕公共影响力展开的作品集。',
+    exploreEyebrow: '继续探索',
+    exploreTitle: '进入任意页面，查看完整经历。',
     cta1: '了解我的经历',
     cta2: '联系我',
     scroll: '向下滚动',
@@ -60,6 +96,98 @@ export const homeStats: Record<Language, HomeStat[]> = {
     { n: '4', l: '政策简报' },
     { n: '6', l: '语言' },
     { n: '3+', l: '国家' },
+  ],
+};
+
+export const homeFocusAreas: Record<Language, HomeFocusArea[]> = {
+  en: [
+    {
+      title: 'Policy research',
+      body: 'Healthcare governance, GBA integration, trade policy, and field research translated into structured recommendations.',
+      href: '/research',
+      accent: '#64d2ff',
+    },
+    {
+      title: 'Economic analysis',
+      body: 'Econometrics, survey evidence, and institutional analysis for understanding how public decisions shape outcomes.',
+      href: '/experience',
+      accent: '#30d158',
+    },
+    {
+      title: 'AI product building',
+      body: 'AI-native workflows, research assistants, dashboards, and practical tools designed around real user needs.',
+      href: '/ai',
+      accent: '#ff9f0a',
+    },
+  ],
+  cn: [
+    {
+      title: '政策研究',
+      body: '关注医疗治理、大湾区融合、贸易政策与实地调研，把复杂问题整理成可执行的政策建议。',
+      href: '/research',
+      accent: '#64d2ff',
+    },
+    {
+      title: '经济分析',
+      body: '使用计量、问卷与制度分析方法，理解公共决策如何影响市场、组织与个体行为。',
+      href: '/experience',
+      accent: '#30d158',
+    },
+    {
+      title: 'AI 产品构建',
+      body: '搭建 AI 原生工作流、研究助手、数据仪表盘和面向真实需求的实用工具。',
+      href: '/ai',
+      accent: '#ff9f0a',
+    },
+  ],
+};
+
+export const homeFeaturedWork: Record<Language, HomeFeaturedWork[]> = {
+  en: [
+    {
+      label: 'Research',
+      title: 'Greater Bay Area healthcare governance',
+      body: 'A policy analysis project on cross-border medical access, regulatory innovation, and institutional coordination.',
+      href: '/research?i=0',
+      accent: '#64d2ff',
+    },
+    {
+      label: 'Experience',
+      title: 'UNDP China trade policy research',
+      body: 'Regression-based policy analysis and text research on China-US economic relations and trade frameworks.',
+      href: '/experience',
+      accent: '#30d158',
+    },
+    {
+      label: 'AI',
+      title: 'AI-native productivity experiments',
+      body: 'Building tools that connect research, structured data, and interface design into repeatable workflows.',
+      href: '/ai',
+      accent: '#bf5af2',
+    },
+  ],
+  cn: [
+    {
+      label: '科研',
+      title: '粤港澳大湾区医疗治理',
+      body: '围绕跨境医疗准入、监管创新与制度协调展开的政策分析项目。',
+      href: '/research?i=0',
+      accent: '#64d2ff',
+    },
+    {
+      label: '经历',
+      title: 'UNDP 中国贸易政策研究',
+      body: '基于回归分析与文本研究，分析中美经济关系与贸易政策框架。',
+      href: '/experience',
+      accent: '#30d158',
+    },
+    {
+      label: 'AI',
+      title: 'AI 原生效率工具实验',
+      body: '把研究、结构化数据与界面设计连接成可重复使用的工作流。',
+      href: '/ai',
+      accent: '#bf5af2',
+    },
   ],
 };
 

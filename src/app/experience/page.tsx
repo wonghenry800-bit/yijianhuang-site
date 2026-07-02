@@ -21,7 +21,7 @@ export default function Experience() {
       <div className="vision-hero-card liquid-glass-panel" style={{ maxWidth: 760, margin: '0 auto', padding: '100px 24px 60px', textAlign: 'center' }}>
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#2997ff', marginBottom: 16 }}>Career</motion.p>
         <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 }}
-          style={{ fontSize: 'clamp(40px, 6vw, 68px)', fontWeight: 700, color: '#f5f5f7', letterSpacing: '-0.03em', lineHeight: 1.0, marginBottom: 16 }}>
+          style={{ fontSize: 'clamp(40px, 6vw, 68px)', fontWeight: 700, color: '#f5f5f7', letterSpacing: 0, lineHeight: 1.0, marginBottom: 16 }}>
           {lang === 'en' ? 'Experience' : '工作经历'}
         </motion.h1>
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}
@@ -46,7 +46,7 @@ export default function Experience() {
                   <Image src={publicImage(item.img)} alt={item.abbr} fill sizes="44px" style={{ objectFit: 'cover' }} onError={e => { (e.currentTarget as HTMLImageElement).style.display = 'none' }} />
                 </div>
                 <div style={{ flex: 1, minWidth: 0 }}>
-                  <div style={{ fontSize: 14, fontWeight: 600, color: '#1d1d1f', letterSpacing: '-0.01em' }}>{item.org}</div>
+                  <div style={{ fontSize: 14, fontWeight: 600, color: '#1d1d1f', letterSpacing: 0 }}>{item.org}</div>
                   <div style={{ fontSize: 12, color: '#6e6e73', marginTop: 2 }}>{item.role}</div>
                   <div style={{ display: 'flex', gap: 5, marginTop: 6, flexWrap: 'wrap' }}>
                     {item.tags.map((tag, j) => (
@@ -81,7 +81,7 @@ export default function Experience() {
               </div>
               <div style={{ padding: 28 }}>
                 <div style={{ display: 'inline-block', fontSize: 10, fontWeight: 700, padding: '3px 10px', borderRadius: 100, background: data[sel].color, color: '#fff', letterSpacing: '0.04em', textTransform: 'uppercase', marginBottom: 12 }}>{data[sel].loc}</div>
-                <div style={{ fontSize: 20, fontWeight: 700, color: '#f5f5f7', letterSpacing: '-0.02em' }}>{data[sel].org}</div>
+                <div style={{ fontSize: 20, fontWeight: 700, color: '#f5f5f7', letterSpacing: 0 }}>{data[sel].org}</div>
                 <div style={{ fontSize: 13, color: '#2997ff', marginTop: 4 }}>{data[sel].role}</div>
                 <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.3)', marginTop: 4, display: 'flex', alignItems: 'center', gap: 6 }}>
                   {data[sel].period}

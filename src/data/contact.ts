@@ -23,7 +23,7 @@ export const contactItems: ContactItem[] = [
   {
     id: 'location',
     label: { en: 'Location', cn: '所在地' },
-    value: { en: 'Shenzhen · Open to worldwide', cn: '深圳 · 欢迎全球合作' },
+    value: { en: 'Shanghai, China · Open to worldwide', cn: '中国上海 · 欢迎全球合作' },
     href: null,
   },
 ];

@@ -25,7 +25,7 @@ export default function AIPage() {
           {lang === 'en' ? 'Technology' : '技术'}
         </motion.p>
         <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 }}
-          style={{ fontSize: 'clamp(40px, 6vw, 72px)', fontWeight: 700, color: '#f5f5f7', letterSpacing: '-0.03em', lineHeight: 1.0, marginBottom: 20 }}>
+          style={{ fontSize: 'clamp(40px, 6vw, 72px)', fontWeight: 700, color: '#f5f5f7', letterSpacing: 0, lineHeight: 1.0, marginBottom: 20 }}>
           {lang === 'en' ? 'AI Applications' : 'AI 应用'}
         </motion.h1>
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}
@@ -75,7 +75,7 @@ export default function AIPage() {
                     <span style={{ fontSize: 10, fontWeight: 700, padding: '3px 10px', borderRadius: 100, background: p.color, color: '#fff' }}>{p.status}</span>
                     <span style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', background: p.statusColor }} />
                   </div>
-                  <div style={{ fontSize: 15, fontWeight: 700, color: '#f5f5f7', letterSpacing: '-0.01em', marginBottom: 5 }}>{p.name}</div>
+                  <div style={{ fontSize: 15, fontWeight: 700, color: '#f5f5f7', letterSpacing: 0, marginBottom: 5 }}>{p.name}</div>
                   <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.35)', marginBottom: 10 }}>{p.subtitle}</div>
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: 5 }}>
                     {p.tags.slice(0, 4).map((tag, j) => (
@@ -104,7 +104,7 @@ export default function AIPage() {
                   <span style={{ fontSize: 10, fontWeight: 700, padding: '3px 10px', borderRadius: 100, background: projects[sel].color, color: '#fff' }}>{projects[sel].status}</span>
                   <span style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', background: projects[sel].statusColor }} />
                 </div>
-                <div style={{ fontSize: 20, fontWeight: 700, color: '#f5f5f7', letterSpacing: '-0.02em', marginBottom: 6 }}>{projects[sel].name}</div>
+                <div style={{ fontSize: 20, fontWeight: 700, color: '#f5f5f7', letterSpacing: 0, marginBottom: 6 }}>{projects[sel].name}</div>
                 <div style={{ fontSize: 12, color: '#2997ff', marginBottom: 3 }}>{projects[sel].course}</div>
                 <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.3)', marginBottom: 16 }}>{lang === 'en' ? 'Team: ' : '团队：'}{projects[sel].team}</div>
                 <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.6)', lineHeight: 1.75, marginBottom: 20 }}>{projects[sel].overview}</p>
