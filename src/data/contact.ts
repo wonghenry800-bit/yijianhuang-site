@@ -11,14 +11,14 @@ export const contactItems: ContactItem[] = [
   {
     id: 'email',
     label: { en: 'Email', cn: '邮箱' },
-    value: { en: 'Yijianhuang@link.cuhk.edu.cn', cn: 'Yijianhuang@link.cuhk.edu.cn' },
-    href: 'mailto:Yijianhuang@link.cuhk.edu.cn',
+    value: { en: 'wonghenry800@gmail.com', cn: 'wonghenry800@gmail.com' },
+    href: 'mailto:wonghenry800@gmail.com',
   },
   {
     id: 'phone',
     label: { en: 'Phone', cn: '电话' },
-    value: { en: '+86 136 3137 9946', cn: '+86 136 3137 9946' },
-    href: 'tel:+8613631379946',
+    value: { en: '+86 17881804659', cn: '+86 17881804659' },
+    href: 'tel:+8617881804659',
   },
   {
     id: 'location',
