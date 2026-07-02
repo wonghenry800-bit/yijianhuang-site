@@ -67,8 +67,8 @@ export default function Photos() {
                 <div style={{ fontSize: 17, fontWeight: 600, color: '#f5f5f7' }}>{lang === 'en' ? photos[sel].en : photos[sel].cn}</div>
                 <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.35)', marginTop: 4 }}>{photos[sel].date}</div>
               </div>
-              <button onClick={() => setSel(null)}
-                style={{ marginTop: 24, padding: '10px 28px', borderRadius: 100, background: 'rgba(255,255,255,0.1)', color: '#fff', border: '0.5px solid rgba(255,255,255,0.15)', fontSize: 13, fontWeight: 500, cursor: 'pointer' }}>
+              <button className="liquid-glass-button" onClick={() => setSel(null)}
+                style={{ marginTop: 24, padding: '10px 28px', borderRadius: 100, color: '#fff', fontSize: 13, fontWeight: 500, cursor: 'pointer' }}>
                 {lang === 'en' ? 'Close' : '关闭'}
               </button>
             </motion.div>

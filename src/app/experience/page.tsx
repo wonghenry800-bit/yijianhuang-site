@@ -73,6 +73,7 @@ export default function Experience() {
             <motion.div initial={{ scale: 0.95, y: 20, opacity: 0 }} animate={{ scale: 1, y: 0, opacity: 1 }} exit={{ scale: 0.95, opacity: 0 }}
               transition={{ type: 'spring', damping: 28, stiffness: 300 }}
               onClick={e => e.stopPropagation()}
+              className="liquid-glass-panel"
               style={{ background: '#1c1c1e', borderRadius: 22, maxWidth: 560, width: '100%', overflow: 'hidden', border: '0.5px solid rgba(255,255,255,0.12)', boxShadow: '0 32px 80px rgba(0,0,0,0.5)' }}>
               <div style={{ aspectRatio: '16/9', overflow: 'hidden', background: '#2c2c2e', position: 'relative' }}>
                 <Image src={publicImage(data[sel].img)} alt={data[sel].org} fill sizes="(max-width: 768px) 100vw, 560px" style={{ objectFit: 'cover', opacity: 0.85 }} />
@@ -93,7 +94,7 @@ export default function Experience() {
                   </a>
                 )}
                 <div style={{ fontSize: 14, color: 'rgba(255,255,255,0.55)', marginTop: 18, lineHeight: 1.85, whiteSpace: 'pre-line' }}>{data[sel].detail}</div>
-                <button onClick={() => setSel(null)} style={{ marginTop: 24, width: '100%', padding: '12px 0', borderRadius: 100, background: '#2997ff', color: '#fff', border: 'none', fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
+                <button className="liquid-glass-button liquid-glass-button--primary" onClick={() => setSel(null)} style={{ marginTop: 24, width: '100%', padding: '12px 0', borderRadius: 100, color: '#fff', fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
                   {lang === 'en' ? 'Close' : '关闭'}
                 </button>
               </div>

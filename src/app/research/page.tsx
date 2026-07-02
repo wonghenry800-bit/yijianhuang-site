@@ -67,6 +67,7 @@ export default function Research() {
             <motion.div initial={{ scale: 0.95, y: 20, opacity: 0 }} animate={{ scale: 1, y: 0, opacity: 1 }} exit={{ scale: 0.95, opacity: 0 }}
               transition={{ type: 'spring', damping: 28, stiffness: 300 }}
               onClick={e => e.stopPropagation()}
+              className="liquid-glass-panel liquid-glass-panel--light"
               style={{ background: '#fff', borderRadius: 22, maxWidth: 580, width: '100%', overflow: 'hidden', border: '0.5px solid rgba(0,0,0,0.1)', boxShadow: '0 32px 80px rgba(0,0,0,0.2)' }}>
               <ImageCarousel imgs={data[sel].imgs} alt={data[sel].title} />
               <div style={{ padding: 28 }}>
@@ -75,7 +76,7 @@ export default function Research() {
                 <div style={{ fontSize: 13, color: '#2997ff', marginTop: 4 }}>{data[sel].role}</div>
                 <div style={{ fontSize: 12, color: '#aeaeb2', marginTop: 2 }}>{data[sel].institution} · {data[sel].loc} · {data[sel].period}</div>
                 <div style={{ fontSize: 14, color: '#4a4a4a', marginTop: 20, lineHeight: 1.85, whiteSpace: 'pre-line' }}>{data[sel].detail}</div>
-                <button onClick={() => setSel(null)} style={{ marginTop: 24, width: '100%', padding: '12px 0', borderRadius: 100, background: '#1d1d1f', color: '#fff', border: 'none', fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
+                <button className="liquid-glass-button liquid-glass-button--primary" onClick={() => setSel(null)} style={{ marginTop: 24, width: '100%', padding: '12px 0', borderRadius: 100, color: '#fff', fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
                   {lang === 'en' ? 'Close' : '关闭'}
                 </button>
               </div>

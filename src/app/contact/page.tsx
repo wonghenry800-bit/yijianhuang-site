@@ -38,15 +38,15 @@ export default function Contact() {
             </motion.p>
           </div>
 
-          <div style={{ borderRadius: 18, overflow: 'hidden', border: '0.5px solid rgba(0,0,0,0.08)' }}>
+          <div className="liquid-glass-panel liquid-glass-panel--light" style={{ borderRadius: 22, overflow: 'hidden', border: '0.5px solid rgba(0,0,0,0.08)' }}>
             {contactItems.map((item, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.08 + 0.2 }}>
                 {item.href ? (
                   <a href={item.href}
-                    style={{ display: 'flex', alignItems: 'center', gap: 16, padding: '18px 22px', textDecoration: 'none', borderBottom: i < contactItems.length - 1 ? '0.5px solid rgba(0,0,0,0.06)' : 'none', background: 'rgba(0,0,0,0.01)', transition: 'background 0.15s' }}
-                    onMouseEnter={e => { e.currentTarget.style.background = '#f5f5f7' }}
-                    onMouseLeave={e => { e.currentTarget.style.background = 'rgba(0,0,0,0.01)' }}>
-                    <div style={{ width: 40, height: 40, borderRadius: '50%', background: '#f5f5f7', border: '0.5px solid rgba(0,0,0,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                    style={{ display: 'flex', alignItems: 'center', gap: 16, padding: '18px 22px', textDecoration: 'none', borderBottom: i < contactItems.length - 1 ? '0.5px solid rgba(0,0,0,0.06)' : 'none', background: 'rgba(255,255,255,0.22)', transition: 'background 0.15s' }}
+                    onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.5)' }}
+                    onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.22)' }}>
+                    <div className="liquid-glass-button liquid-glass-button--light" style={{ width: 40, height: 40, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                       <ContactIcon item={item.id} />
                     </div>
                     <div style={{ flex: 1 }}>
@@ -56,8 +56,8 @@ export default function Contact() {
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#aeaeb2" strokeWidth="2"><path d="M9 18l6-6-6-6"/></svg>
                   </a>
                 ) : (
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 16, padding: '18px 22px', borderBottom: i < contactItems.length - 1 ? '0.5px solid rgba(0,0,0,0.06)' : 'none', background: 'rgba(0,0,0,0.01)' }}>
-                    <div style={{ width: 40, height: 40, borderRadius: '50%', background: '#f5f5f7', border: '0.5px solid rgba(0,0,0,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 16, padding: '18px 22px', borderBottom: i < contactItems.length - 1 ? '0.5px solid rgba(0,0,0,0.06)' : 'none', background: 'rgba(255,255,255,0.22)' }}>
+                    <div className="liquid-glass-button liquid-glass-button--light" style={{ width: 40, height: 40, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                       <ContactIcon item={item.id} />
                     </div>
                     <div>

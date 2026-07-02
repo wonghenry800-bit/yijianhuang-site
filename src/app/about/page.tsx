@@ -1,5 +1,6 @@
 'use client';
 
+import type { CSSProperties } from 'react';
 import { useState } from 'react';
 import Image from 'next/image';
 import { useLanguage } from '../../components/LanguageContext';
@@ -101,20 +102,21 @@ export default function About() {
               <button
                 key={i}
                 onClick={() => setSelSkill(selSkill === i ? null : i)}
+                className="liquid-glass-button liquid-glass-button--light"
+                data-active={selSkill === i}
                 style={{
+                  '--liquid-accent': sk.color,
                   fontSize: 13, fontWeight: 500, padding: '7px 16px', borderRadius: 100,
-                  cursor: 'pointer', border: '0.5px solid', transition: 'all 0.2s',
-                  background: selSkill === i ? sk.color : '#f5f5f7',
-                  borderColor: selSkill === i ? sk.color : 'rgba(0,0,0,0.08)',
+                  cursor: 'pointer', transition: 'all 0.2s',
                   color: selSkill === i ? '#fff' : '#1d1d1f',
-                }}
+                } as CSSProperties}
               >
                 {sk.name}
               </button>
             ))}
           </div>
           {selSkill !== null && (
-            <div style={{ marginTop: 14, background: `${skills[selSkill].color}10`, border: `0.5px solid ${skills[selSkill].color}40`, borderRadius: 14, padding: '14px 18px' }}>
+            <div className="liquid-glass-panel liquid-glass-panel--light" style={{ marginTop: 14, border: `0.5px solid ${skills[selSkill].color}40`, borderRadius: 16, padding: '14px 18px' }}>
               <div style={{ fontSize: 11, fontWeight: 700, color: skills[selSkill].color, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 7 }}>{skills[selSkill].name}</div>
               <p style={{ fontSize: 13, color: '#4a4a4a', lineHeight: 1.75, margin: 0 }}>{skills[selSkill].detail}</p>
             </div>
@@ -129,6 +131,7 @@ export default function About() {
             <motion.div initial={{ scale: 0.95, y: 20, opacity: 0 }} animate={{ scale: 1, y: 0, opacity: 1 }} exit={{ scale: 0.95, opacity: 0 }}
               transition={{ type: 'spring', damping: 28, stiffness: 300 }}
               onClick={e => e.stopPropagation()}
+              className="liquid-glass-panel liquid-glass-panel--light"
               style={{ background: '#fff', borderRadius: 22, maxWidth: 560, width: '100%', overflow: 'hidden', border: '0.5px solid rgba(0,0,0,0.1)', boxShadow: '0 32px 80px rgba(0,0,0,0.25)' }}>
               <ImageCarousel imgs={edu[selEdu].imgs} alt={edu[selEdu].school} />
               <div style={{ padding: 28 }}>
@@ -141,8 +144,8 @@ export default function About() {
                   <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" /></svg>
                 </a>
                 <div style={{ fontSize: 14, color: '#6e6e73', marginTop: 18, lineHeight: 1.85, whiteSpace: 'pre-line' }}>{edu[selEdu].detail}</div>
-                <button onClick={() => setSelEdu(null)}
-                  style={{ marginTop: 24, width: '100%', padding: '12px 0', borderRadius: 100, background: '#1d1d1f', color: '#fff', border: 'none', fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
+                <button className="liquid-glass-button liquid-glass-button--primary" onClick={() => setSelEdu(null)}
+                  style={{ marginTop: 24, width: '100%', padding: '12px 0', borderRadius: 100, color: '#fff', fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
                   {lang === 'en' ? 'Close' : '关闭'}
                 </button>
               </div>

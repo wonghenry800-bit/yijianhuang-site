@@ -96,6 +96,7 @@ export default function AIPage() {
             <motion.div initial={{ scale: 0.95, y: 20, opacity: 0 }} animate={{ scale: 1, y: 0, opacity: 1 }} exit={{ scale: 0.95, opacity: 0 }}
               transition={{ type: 'spring', damping: 28, stiffness: 300 }}
               onClick={e => e.stopPropagation()}
+              className="liquid-glass-panel"
               style={{ background: '#1c1c1e', borderRadius: 22, maxWidth: 640, width: '100%', overflow: 'hidden', border: '0.5px solid rgba(255,255,255,0.12)', boxShadow: '0 32px 80px rgba(0,0,0,0.5)' }}>
               <ImageCarousel imgs={projects[sel].imgs} alt={projects[sel].name} background="#2c2c2e" controlSize={30} />
               <div style={{ padding: '24px 28px 28px' }}>
@@ -118,7 +119,7 @@ export default function AIPage() {
                     <span key={j} style={{ fontSize: 11, fontWeight: 600, padding: '4px 12px', borderRadius: 100, background: 'rgba(255,255,255,0.07)', color: 'rgba(255,255,255,0.5)' }}>{tag}</span>
                   ))}
                 </div>
-                <button onClick={() => setSel(null)} style={{ marginTop: 20, width: '100%', padding: '12px 0', borderRadius: 100, background: projects[sel].color, color: '#fff', border: 'none', fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
+                <button className="liquid-glass-button liquid-glass-button--primary" onClick={() => setSel(null)} style={{ marginTop: 20, width: '100%', padding: '12px 0', borderRadius: 100, color: '#fff', fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
                   {lang === 'en' ? 'Close' : '关闭'}
                 </button>
               </div>

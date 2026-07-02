@@ -43,15 +43,16 @@ export default function ImageCarousel({
                 key={i}
                 onClick={() => setCur(i)}
                 aria-label={`Show image ${i + 1}`}
+                className="liquid-glass-button"
                 style={{
                   width: i === cur ? 18 : 6,
                   height: 6,
                   borderRadius: 3,
-                  background: i === cur ? '#fff' : 'rgba(255,255,255,0.5)',
-                  border: 'none',
+                  background: i === cur ? 'rgba(255,255,255,0.92)' : 'rgba(255,255,255,0.42)',
                   cursor: 'pointer',
                   padding: 0,
                   transition: 'all 0.2s',
+                  boxShadow: 'none',
                 }}
               />
             ))}
@@ -59,6 +60,7 @@ export default function ImageCarousel({
           <button
             onClick={() => setCur((cur - 1 + imgs.length) % imgs.length)}
             aria-label="Previous image"
+            className="liquid-glass-button"
             style={{
               position: 'absolute',
               left: 10,
@@ -67,8 +69,6 @@ export default function ImageCarousel({
               width: controlSize,
               height: controlSize,
               borderRadius: '50%',
-              background: 'rgba(0,0,0,0.45)',
-              border: 'none',
               color: '#fff',
               cursor: 'pointer',
               fontSize: 18,
@@ -83,6 +83,7 @@ export default function ImageCarousel({
           <button
             onClick={() => setCur((cur + 1) % imgs.length)}
             aria-label="Next image"
+            className="liquid-glass-button"
             style={{
               position: 'absolute',
               right: 10,
@@ -91,8 +92,6 @@ export default function ImageCarousel({
               width: controlSize,
               height: controlSize,
               borderRadius: '50%',
-              background: 'rgba(0,0,0,0.45)',
-              border: 'none',
               color: '#fff',
               cursor: 'pointer',
               fontSize: 18,
