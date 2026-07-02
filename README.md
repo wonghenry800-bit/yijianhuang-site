@@ -69,7 +69,7 @@ Production is hosted on Vercel.
 
 - Vercel project: `portfolio`
 - Production domains: `yijianhuang.site`, `www.yijianhuang.site`
-- Source repository: `wonghenry800-bit/desktop-tutorial`
+- Source repository: `wonghenry800-bit/yijianhuang-site`
 - Production branch: `main`
 
 Deployments are triggered from commits pushed to `main`.
