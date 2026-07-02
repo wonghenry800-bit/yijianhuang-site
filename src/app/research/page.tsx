@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { useLanguage } from '../../components/LanguageContext';
 import ImageCarousel from '../../components/ImageCarousel';
 import Navbar from '../../components/Navbar';
+import VisionPageShell from '../../components/VisionPageShell';
 import { useQuerySelectedIndex } from '../../hooks/useQuerySelectedIndex';
 import { researchData } from '../../data/research';
 import { publicImage } from '../../utils/publicImage';
@@ -15,11 +16,11 @@ export default function Research() {
   const [sel, setSel] = useQuerySelectedIndex(data.length);
 
   return (
-    <div style={{ background: '#fff', minHeight: '100vh' }}>
+    <VisionPageShell accent="#185fa5">
       <Navbar lang={lang} setLang={setLang} currentPage="research" />
       <main style={{ paddingTop: 100, paddingBottom: 100 }}>
         <div style={{ maxWidth: 740, margin: '0 auto', padding: '0 24px' }}>
-          <div style={{ textAlign: 'center', marginBottom: 60 }}>
+          <div className="vision-hero-card liquid-glass-panel liquid-glass-panel--light" style={{ textAlign: 'center', marginBottom: 60, padding: '36px 24px' }}>
             <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#2997ff', marginBottom: 16 }}>Academic</motion.p>
             <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 }}
               style={{ fontSize: 'clamp(36px, 5vw, 56px)', fontWeight: 700, color: '#1d1d1f', letterSpacing: '-0.03em', lineHeight: 1.05, marginBottom: 16 }}>
@@ -32,9 +33,9 @@ export default function Research() {
           </div>
 
           <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#86868b', paddingBottom: 12, borderBottom: '0.5px solid rgba(0,0,0,0.08)', marginBottom: 0 }}>Projects</p>
-          <div style={{ borderRadius: '0 0 18px 18px', overflow: 'hidden', border: '0.5px solid rgba(0,0,0,0.08)', borderTop: 'none' }}>
+          <div className="vision-list-panel liquid-glass-panel liquid-glass-panel--light" style={{ borderRadius: '0 0 18px 18px', overflow: 'hidden', border: '0.5px solid rgba(0,0,0,0.08)', borderTop: 'none' }}>
             {data.map((item, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.06 }}
+              <motion.div key={i} className="vision-interactive-card" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.06 }}
                 onClick={() => setSel(i)}
                 style={{ display: 'flex', alignItems: 'center', gap: 16, padding: '16px 22px', cursor: 'pointer', borderBottom: i < data.length - 1 ? '0.5px solid rgba(0,0,0,0.06)' : 'none', background: 'rgba(0,0,0,0.01)', transition: 'background 0.15s' }}
                 onMouseEnter={e => (e.currentTarget.style.background = '#f5f5f7')}
@@ -84,6 +85,6 @@ export default function Research() {
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </VisionPageShell>
   );
 }

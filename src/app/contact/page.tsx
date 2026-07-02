@@ -2,6 +2,7 @@
 
 import { useLanguage } from '../../components/LanguageContext';
 import Navbar from '../../components/Navbar';
+import VisionPageShell from '../../components/VisionPageShell';
 import { contactItems } from '../../data/contact';
 import type { ContactItem } from '../../data/contact';
 import { motion } from 'framer-motion';
@@ -22,11 +23,11 @@ export default function Contact() {
   const { lang, setLang } = useLanguage();
 
   return (
-    <div style={{ background: '#fff', minHeight: '100vh' }}>
+    <VisionPageShell accent="#ff375f">
       <Navbar lang={lang} setLang={setLang} currentPage="contact" />
       <main style={{ paddingTop: 100, paddingBottom: 100 }}>
         <div style={{ maxWidth: 560, margin: '0 auto', padding: '0 24px' }}>
-          <div style={{ textAlign: 'center', marginBottom: 60 }}>
+          <div className="vision-hero-card liquid-glass-panel liquid-glass-panel--light" style={{ textAlign: 'center', marginBottom: 60, padding: '36px 24px' }}>
             <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#2997ff', marginBottom: 16 }}>Connect</motion.p>
             <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 }}
               style={{ fontSize: 'clamp(36px,5vw,52px)', fontWeight: 700, color: '#1d1d1f', letterSpacing: '-0.03em', lineHeight: 1.05, marginBottom: 16 }}>
@@ -38,9 +39,9 @@ export default function Contact() {
             </motion.p>
           </div>
 
-          <div className="liquid-glass-panel liquid-glass-panel--light" style={{ borderRadius: 22, overflow: 'hidden', border: '0.5px solid rgba(0,0,0,0.08)' }}>
+          <div className="vision-list-panel liquid-glass-panel liquid-glass-panel--light" style={{ borderRadius: 22, overflow: 'hidden', border: '0.5px solid rgba(0,0,0,0.08)' }}>
             {contactItems.map((item, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.08 + 0.2 }}>
+              <motion.div key={i} className="vision-interactive-card" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.08 + 0.2 }}>
                 {item.href ? (
                   <a href={item.href}
                     style={{ display: 'flex', alignItems: 'center', gap: 16, padding: '18px 22px', textDecoration: 'none', borderBottom: i < contactItems.length - 1 ? '0.5px solid rgba(0,0,0,0.06)' : 'none', background: 'rgba(255,255,255,0.22)', transition: 'background 0.15s' }}
@@ -76,6 +77,6 @@ export default function Contact() {
           </motion.p>
         </div>
       </main>
-    </div>
+    </VisionPageShell>
   );
 }

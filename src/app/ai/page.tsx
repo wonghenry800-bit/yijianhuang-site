@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { useLanguage } from '../../components/LanguageContext';
 import ImageCarousel from '../../components/ImageCarousel';
 import Navbar from '../../components/Navbar';
+import VisionPageShell from '../../components/VisionPageShell';
 import { useQuerySelectedIndex } from '../../hooks/useQuerySelectedIndex';
 import { projectsData, toolsData } from '../../data/ai';
 import { publicImage } from '../../utils/publicImage';
@@ -16,11 +17,10 @@ export default function AIPage() {
   const [sel, setSel] = useQuerySelectedIndex(projects.length);
 
   return (
-    <div style={{ background: '#000', minHeight: '100vh' }}>
+    <VisionPageShell dark accent="#bf5af2">
       <Navbar lang={lang} setLang={setLang} currentPage="ai" dark />
 
-      <div style={{ padding: '100px 24px 70px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', top: '30%', left: '50%', transform: 'translateX(-50%)', width: 500, height: 500, borderRadius: '50%', background: 'radial-gradient(circle, rgba(41,151,255,0.07) 0%, transparent 70%)', pointerEvents: 'none' }} />
+      <div className="vision-hero-card liquid-glass-panel" style={{ maxWidth: 780, margin: '0 auto', padding: '100px 24px 70px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#2997ff', marginBottom: 16 }}>
           {lang === 'en' ? 'Technology' : '技术'}
         </motion.p>
@@ -34,14 +34,14 @@ export default function AIPage() {
         </motion.p>
       </div>
 
-      <div style={{ background: '#fff', borderRadius: '24px 24px 0 0', padding: '56px 24px 0' }}>
+      <div className="liquid-glass-panel liquid-glass-panel--light" style={{ background: 'rgba(255,255,255,0.86)', borderRadius: '24px 24px 0 0', padding: '56px 24px 0', backdropFilter: 'blur(28px)', WebkitBackdropFilter: 'blur(28px)' }}>
         <div style={{ maxWidth: 740, margin: '0 auto' }}>
           <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#86868b', paddingBottom: 12, borderBottom: '0.5px solid rgba(0,0,0,0.08)', marginBottom: 20 }}>
             {lang === 'en' ? 'Daily Stack' : '工具栈'}
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 10, marginBottom: 60 }}>
             {tools.map((t, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.05 }}
+              <motion.div key={i} className="vision-interactive-card liquid-glass-panel liquid-glass-panel--light" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.05 }}
                 style={{ background: '#f5f5f7', borderRadius: 16, padding: '18px 20px', border: '0.5px solid rgba(0,0,0,0.06)', display: 'flex', gap: 14, alignItems: 'flex-start' }}>
                 <div style={{ width: 36, height: 36, borderRadius: 10, background: t.color, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 11, fontWeight: 700, color: '#fff', flexShrink: 0 }}>{t.icon}</div>
                 <div style={{ flex: 1, minWidth: 0 }}>
@@ -60,7 +60,7 @@ export default function AIPage() {
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 80 }}>
             {projects.map((p, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 + 0.3 }}
+              <motion.div key={i} className="vision-interactive-card liquid-glass-panel" initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 + 0.3 }}
                 onClick={() => setSel(i)}
                 style={{ background: '#1d1d1f', borderRadius: 20, overflow: 'hidden', cursor: 'pointer', border: '0.5px solid rgba(255,255,255,0.06)', transition: 'background 0.2s' }}
                 onMouseEnter={e => (e.currentTarget.style.background = '#2c2c2e')}
@@ -127,6 +127,6 @@ export default function AIPage() {
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </VisionPageShell>
   );
 }

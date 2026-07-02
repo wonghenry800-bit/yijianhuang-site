@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { useLanguage } from '../../components/LanguageContext';
 import Navbar from '../../components/Navbar';
+import VisionPageShell from '../../components/VisionPageShell';
 import { motion, AnimatePresence } from 'framer-motion';
 import { campusData } from '../../data/campus';
 import { publicImage } from '../../utils/publicImage';
@@ -14,10 +15,10 @@ export default function Campus() {
   const data = campusData[lang];
 
   return (
-    <div style={{ background: '#000', minHeight: '100vh' }}>
+    <VisionPageShell dark accent="#ff9f0a">
       <Navbar lang={lang} setLang={setLang} currentPage="campus" dark />
 
-      <div style={{ padding: '100px 24px 60px', textAlign: 'center' }}>
+      <div className="vision-hero-card liquid-glass-panel" style={{ maxWidth: 760, margin: '0 auto', padding: '100px 24px 60px', textAlign: 'center' }}>
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#2997ff', marginBottom: 16 }}>Student Life</motion.p>
         <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 }}
           style={{ fontSize: 'clamp(40px,6vw,68px)', fontWeight: 700, color: '#f5f5f7', letterSpacing: '-0.03em', lineHeight: 1.0, marginBottom: 16 }}>
@@ -32,7 +33,7 @@ export default function Campus() {
       <div style={{ maxWidth: 740, margin: '0 auto', padding: '0 24px 80px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
           {data.map((item, i) => (
-            <motion.div key={i} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }}
+            <motion.div key={i} className="vision-interactive-card liquid-glass-panel" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }}
               onClick={() => setSel(i)}
               style={{ background: '#111', border: '0.5px solid rgba(255,255,255,0.08)', borderRadius: 18, overflow: 'hidden', cursor: 'pointer', transition: 'background 0.2s' }}
               onMouseEnter={e => (e.currentTarget.style.background = '#1a1a1a')}
@@ -77,6 +78,6 @@ export default function Campus() {
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </VisionPageShell>
   );
 }

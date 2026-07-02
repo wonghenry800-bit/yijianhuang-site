@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { useLanguage } from '../../components/LanguageContext';
 import Navbar from '../../components/Navbar';
+import VisionPageShell from '../../components/VisionPageShell';
 import { motion, AnimatePresence } from 'framer-motion';
 import { photos } from '../../data/photos';
 import { publicImage } from '../../utils/publicImage';
@@ -13,10 +14,10 @@ export default function Photos() {
   const [sel, setSel] = useState<number | null>(null);
 
   return (
-    <div style={{ background: '#000', minHeight: '100vh' }}>
+    <VisionPageShell dark accent="#64d2ff">
       <Navbar lang={lang} setLang={setLang} currentPage="photos" dark />
 
-      <div style={{ padding: '100px 24px 48px', textAlign: 'center' }}>
+      <div className="vision-hero-card liquid-glass-panel" style={{ maxWidth: 760, margin: '0 auto', padding: '100px 24px 48px', textAlign: 'center' }}>
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#2997ff', marginBottom: 16 }}>Gallery</motion.p>
         <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 }}
           style={{ fontSize: 'clamp(40px,6vw,68px)', fontWeight: 700, color: '#f5f5f7', letterSpacing: '-0.03em', lineHeight: 1.0, marginBottom: 16 }}>
@@ -31,10 +32,9 @@ export default function Photos() {
       <div style={{ maxWidth: 980, margin: '0 auto', padding: '0 24px 80px' }}>
         <div style={{ columns: '3 240px', columnGap: 10 }}>
           {photos.map((p, i) => (
-            <motion.div key={i} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.04 }}
+            <motion.div key={i} className="photo-item vision-interactive-card liquid-glass-panel" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.04 }}
               onClick={() => setSel(i)}
-              style={{ breakInside: 'avoid', marginBottom: 10, cursor: 'pointer', borderRadius: 14, overflow: 'hidden', background: '#111', display: 'block', position: 'relative' }}
-              className="photo-item">
+              style={{ breakInside: 'avoid', marginBottom: 10, cursor: 'pointer', borderRadius: 14, overflow: 'hidden', background: '#111', display: 'block', position: 'relative' }}>
               <Image src={publicImage(p.src)} alt={lang === 'en' ? p.en : p.cn} width={900} height={1200}
                 sizes="(max-width: 768px) 100vw, 320px"
                 style={{ width: '100%', height: 'auto', display: 'block', transition: 'transform 0.4s ease', borderRadius: 14 }}
@@ -75,6 +75,6 @@ export default function Photos() {
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </VisionPageShell>
   );
 }

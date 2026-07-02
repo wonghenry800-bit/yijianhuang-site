@@ -28,6 +28,142 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.vision-shell {
+  --vision-accent: #2997ff;
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.vision-shell--dark {
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.96) 0%, rgba(8, 10, 16, 0.98) 46%, #000 100%),
+    #000;
+}
+
+.vision-shell--light {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(246, 249, 255, 0.92) 52%, #fff 100%),
+    #fff;
+}
+
+.vision-content {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+}
+
+.vision-ambient,
+.vision-ribbons,
+.vision-mesh {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.vision-ambient {
+  background:
+    radial-gradient(70% 52% at 50% -10%, color-mix(in srgb, var(--vision-accent) 24%, transparent), transparent 72%),
+    linear-gradient(115deg, transparent 16%, rgba(255, 255, 255, 0.08) 32%, transparent 48%),
+    linear-gradient(245deg, transparent 28%, color-mix(in srgb, var(--vision-accent) 12%, transparent) 48%, transparent 68%);
+  filter: saturate(150%);
+  opacity: 0.82;
+  animation: visionAmbientDrift 16s ease-in-out infinite alternate;
+}
+
+.vision-shell--light .vision-ambient {
+  background:
+    radial-gradient(70% 52% at 50% -10%, color-mix(in srgb, var(--vision-accent) 18%, transparent), transparent 72%),
+    linear-gradient(115deg, transparent 16%, rgba(255, 255, 255, 0.68) 34%, transparent 54%),
+    linear-gradient(245deg, transparent 30%, color-mix(in srgb, var(--vision-accent) 10%, transparent) 50%, transparent 72%);
+}
+
+.vision-ribbons {
+  background:
+    linear-gradient(104deg, transparent 0%, transparent 18%, rgba(255, 255, 255, 0.11) 34%, transparent 52%),
+    linear-gradient(254deg, transparent 0%, transparent 48%, color-mix(in srgb, var(--vision-accent) 16%, transparent) 64%, transparent 82%);
+  mask-image: linear-gradient(180deg, black 0%, black 62%, transparent 100%);
+  opacity: 0.62;
+  transform: translate3d(0, 0, 0);
+  animation: visionRibbonSlide 22s ease-in-out infinite alternate;
+}
+
+.vision-shell--light .vision-ribbons {
+  opacity: 0.42;
+}
+
+.vision-mesh {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 84px 84px;
+  mask-image: radial-gradient(ellipse at 50% 18%, black 0%, black 30%, transparent 72%);
+  opacity: 0.26;
+  transform: perspective(900px) rotateX(62deg) translateY(18vh);
+  transform-origin: center bottom;
+}
+
+.vision-shell--light .vision-mesh {
+  background-image:
+    linear-gradient(rgba(30, 45, 70, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(30, 45, 70, 0.045) 1px, transparent 1px);
+  opacity: 0.24;
+}
+
+.vision-hero-card {
+  position: relative;
+  border-radius: 28px;
+  transform: translateZ(0);
+  animation: visionCardIn 0.84s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.vision-list-panel {
+  transform: translateZ(0);
+  animation: visionCardIn 0.72s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+}
+
+.vision-interactive-card {
+  transform: translateZ(0);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease, border-color 0.22s ease;
+}
+
+.vision-interactive-card:hover {
+  transform: translateY(-3px) scale(1.01) translateZ(0);
+}
+
+@keyframes visionAmbientDrift {
+  from {
+    transform: translate3d(-1.5vw, -1vh, 0) scale(1);
+  }
+  to {
+    transform: translate3d(1.5vw, 1vh, 0) scale(1.03);
+  }
+}
+
+@keyframes visionRibbonSlide {
+  from {
+    transform: translate3d(-3vw, -1vh, 0) skewY(-2deg);
+  }
+  to {
+    transform: translate3d(3vw, 2vh, 0) skewY(2deg);
+  }
+}
+
+@keyframes visionCardIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.985);
+    filter: blur(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -183,6 +319,14 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .vision-ambient,
+  .vision-ribbons,
+  .vision-hero-card,
+  .vision-list-panel {
+    animation: none;
+  }
+
+  .vision-interactive-card,
   .liquid-hero-glass {
     animation: none;
   }

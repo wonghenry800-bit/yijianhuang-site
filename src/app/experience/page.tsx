@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { useLanguage } from '../../components/LanguageContext';
 import Navbar from '../../components/Navbar';
+import VisionPageShell from '../../components/VisionPageShell';
 import { useQuerySelectedIndex } from '../../hooks/useQuerySelectedIndex';
 import { expData } from '../../data/experience';
 import { publicImage } from '../../utils/publicImage';
@@ -14,10 +15,10 @@ export default function Experience() {
   const [sel, setSel] = useQuerySelectedIndex(data.length);
 
   return (
-    <div style={{ background: '#000', minHeight: '100vh' }}>
+    <VisionPageShell dark accent="#30d158">
       <Navbar lang={lang} setLang={setLang} currentPage="experience" dark />
 
-      <div style={{ padding: '100px 24px 60px', textAlign: 'center' }}>
+      <div className="vision-hero-card liquid-glass-panel" style={{ maxWidth: 760, margin: '0 auto', padding: '100px 24px 60px', textAlign: 'center' }}>
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#2997ff', marginBottom: 16 }}>Career</motion.p>
         <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 }}
           style={{ fontSize: 'clamp(40px, 6vw, 68px)', fontWeight: 700, color: '#f5f5f7', letterSpacing: '-0.03em', lineHeight: 1.0, marginBottom: 16 }}>
@@ -29,14 +30,14 @@ export default function Experience() {
         </motion.p>
       </div>
 
-      <div style={{ background: '#fff', borderRadius: '24px 24px 0 0', minHeight: '60vh', padding: '48px 24px 80px' }}>
+      <div className="liquid-glass-panel liquid-glass-panel--light" style={{ background: 'rgba(255,255,255,0.86)', borderRadius: '24px 24px 0 0', minHeight: '60vh', padding: '48px 24px 80px', backdropFilter: 'blur(28px)', WebkitBackdropFilter: 'blur(28px)' }}>
         <div style={{ maxWidth: 740, margin: '0 auto' }}>
           <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#86868b', paddingBottom: 12, borderBottom: '0.5px solid rgba(0,0,0,0.08)', marginBottom: 0 }}>
             {lang === 'en' ? `${data.length} positions` : `${data.length}段经历`}
           </p>
-          <div style={{ borderRadius: '0 0 18px 18px', overflow: 'hidden', border: '0.5px solid rgba(0,0,0,0.08)', borderTop: 'none' }}>
+          <div className="vision-list-panel liquid-glass-panel liquid-glass-panel--light" style={{ borderRadius: '0 0 18px 18px', overflow: 'hidden', border: '0.5px solid rgba(0,0,0,0.08)', borderTop: 'none' }}>
             {data.map((item, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.05 }}
+              <motion.div key={i} className="vision-interactive-card" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.05 }}
                 onClick={() => setSel(i)}
                 style={{ display: 'flex', alignItems: 'center', gap: 16, padding: '16px 22px', cursor: 'pointer', borderBottom: i < data.length - 1 ? '0.5px solid rgba(0,0,0,0.06)' : 'none', background: 'rgba(0,0,0,0.01)', transition: 'background 0.15s' }}
                 onMouseEnter={e => (e.currentTarget.style.background = '#f5f5f7')}
@@ -102,6 +103,6 @@ export default function Experience() {
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </VisionPageShell>
   );
 }

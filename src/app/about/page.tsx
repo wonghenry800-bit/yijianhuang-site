@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { useLanguage } from '../../components/LanguageContext';
 import ImageCarousel from '../../components/ImageCarousel';
 import Navbar from '../../components/Navbar';
+import VisionPageShell from '../../components/VisionPageShell';
 import { aboutCards, eduData, langs, skillsDetailed } from '../../data/about';
 import { publicImage } from '../../utils/publicImage';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -19,10 +20,10 @@ export default function About() {
   const skills = skillsDetailed[lang];
 
   return (
-    <div style={{ background: '#fff', minHeight: '100vh' }}>
+    <VisionPageShell accent="#2997ff">
       <Navbar lang={lang} setLang={setLang} currentPage="about" />
       <main style={{ paddingTop: 100, paddingBottom: 100 }}>
-        <div style={{ maxWidth: 680, margin: '0 auto', padding: '0 24px', textAlign: 'center', marginBottom: 80 }}>
+        <div className="vision-hero-card liquid-glass-panel liquid-glass-panel--light" style={{ maxWidth: 680, margin: '0 auto', padding: '36px 24px', textAlign: 'center', marginBottom: 80 }}>
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#2997ff', marginBottom: 16 }}>Profile</motion.p>
           <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 }}
             style={{ fontSize: 'clamp(36px, 5vw, 56px)', fontWeight: 700, color: '#1d1d1f', letterSpacing: '-0.03em', lineHeight: 1.05, marginBottom: 18 }}>
@@ -37,7 +38,7 @@ export default function About() {
         <div style={{ maxWidth: 740, margin: '0 auto', padding: '0 24px', marginBottom: 80 }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
             {cards.map((c, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.07 }}
+              <motion.div key={i} className="vision-interactive-card" initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.07 }}
                 style={{ background: i === 0 ? '#1d1d1f' : '#f5f5f7', borderRadius: 18, padding: '22px 24px', gridColumn: i === 0 ? 'span 2' : 'span 1', border: '0.5px solid rgba(0,0,0,0.06)' }}>
                 <div style={{ fontSize: 24, marginBottom: 10 }}>{c.icon}</div>
                 <div style={{ fontSize: 14, fontWeight: 600, color: i === 0 ? '#f5f5f7' : '#1d1d1f', marginBottom: 6 }}>{c.t}</div>
@@ -51,9 +52,9 @@ export default function About() {
           <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#86868b', paddingBottom: 12, borderBottom: '0.5px solid rgba(0,0,0,0.08)', marginBottom: 0 }}>
             {lang === 'en' ? 'Education' : '教育背景'}
           </p>
-          <div style={{ borderRadius: '0 0 18px 18px', overflow: 'hidden', border: '0.5px solid rgba(0,0,0,0.08)', borderTop: 'none' }}>
+          <div className="vision-list-panel liquid-glass-panel liquid-glass-panel--light" style={{ borderRadius: '0 0 18px 18px', overflow: 'hidden', border: '0.5px solid rgba(0,0,0,0.08)', borderTop: 'none' }}>
             {edu.map((e, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.07 + 0.2 }}
+              <motion.div key={i} className="vision-interactive-card" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.07 + 0.2 }}
                 onClick={() => setSelEdu(i)}
                 style={{ display: 'flex', alignItems: 'center', gap: 16, padding: '16px 22px', cursor: 'pointer', borderBottom: i < edu.length - 1 ? '0.5px solid rgba(0,0,0,0.06)' : 'none', background: 'rgba(0,0,0,0.01)', transition: 'background 0.15s' }}
                 onMouseEnter={e2 => (e2.currentTarget.style.background = '#f5f5f7')}
@@ -81,7 +82,7 @@ export default function About() {
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 8 }}>
             {langs.map((l, i) => (
-              <motion.div key={i} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: i * 0.05 + 0.3 }}
+              <motion.div key={i} className="vision-interactive-card liquid-glass-panel liquid-glass-panel--light" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: i * 0.05 + 0.3 }}
                 style={{ background: '#f5f5f7', borderRadius: 14, padding: '14px 16px', border: '0.5px solid rgba(0,0,0,0.06)' }}>
                 <div style={{ fontSize: 13, fontWeight: 600, color: '#1d1d1f' }}>{l.name}</div>
                 <div style={{ fontSize: 11, color: '#86868b', marginTop: 2 }}>{l.level}</div>
@@ -153,6 +154,6 @@ export default function About() {
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </VisionPageShell>
   );
 }
