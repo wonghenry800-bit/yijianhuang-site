@@ -31,14 +31,14 @@ export default function Navbar({ lang, setLang, currentPage, dark = false }: { l
 
   return (
     <nav style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100, background: bg, backdropFilter: 'saturate(180%) blur(22px)', WebkitBackdropFilter: 'saturate(180%) blur(22px)', borderBottom: `0.5px solid ${border}`, boxShadow: scrolled ? '0 12px 36px rgba(0,0,0,0.12)' : 'none', transition: 'background 0.3s, border-color 0.3s, box-shadow 0.3s' }}>
-      <div style={{ maxWidth: 980, margin: '0 auto', padding: '0 24px', height: 44, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 8, textDecoration: 'none' }}>
+      <div style={{ maxWidth: 980, margin: '0 auto', padding: '0 14px', height: 44, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 10, minWidth: 0 }}>
+        <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 8, textDecoration: 'none', flexShrink: 0 }}>
           <Image src="/avatar.jpg" width={24} height={24} style={{ borderRadius: '50%', objectFit: 'cover' }} alt="" />
           <span style={{ fontSize: 14, fontWeight: 600, color: textColor, letterSpacing: 0 }}>{lang === 'cn' ? '黄一健' : 'Yijian'}</span>
         </Link>
-        <div style={{ display: 'flex' }}>
+        <div className="navbar-scroll-strip" style={{ display: 'flex', justifyContent: 'center', flex: 1, minWidth: 0, overflowX: 'auto', overflowY: 'visible', scrollbarWidth: 'none' }}>
           {navItems.map(key => (
-            <div key={key} style={{ position: 'relative' }} onMouseEnter={() => setHovered(key)} onMouseLeave={() => setHovered(null)}>
+            <div key={key} style={{ position: 'relative', flexShrink: 0 }} onMouseEnter={() => setHovered(key)} onMouseLeave={() => setHovered(null)}>
               <Link href={`/${key}`} style={{ display: 'block', padding: '0 10px', fontSize: 12, fontWeight: 500, color: currentPage === key ? textColor : mutedColor, textDecoration: 'none', lineHeight: '44px', transition: 'color 0.15s' }}>
                 {t[key]}
               </Link>
@@ -61,7 +61,7 @@ export default function Navbar({ lang, setLang, currentPage, dark = false }: { l
             </div>
           ))}
         </div>
-        <button className={`liquid-glass-button ${dark ? '' : 'liquid-glass-button--light'}`} onClick={() => setLang(lang === 'en' ? 'cn' : 'en')} style={{ borderRadius: 999, padding: '6px 11px', cursor: 'pointer', fontSize: 12, fontWeight: 600, color: mutedColor, transition: 'color 0.15s' }}
+        <button className={`liquid-glass-button ${dark ? '' : 'liquid-glass-button--light'}`} onClick={() => setLang(lang === 'en' ? 'cn' : 'en')} style={{ borderRadius: 999, padding: '6px 11px', cursor: 'pointer', fontSize: 12, fontWeight: 600, color: mutedColor, transition: 'color 0.15s', flexShrink: 0 }}
           onMouseEnter={e => (e.currentTarget.style.color = textColor)} onMouseLeave={e => (e.currentTarget.style.color = mutedColor)}>
           {lang === 'en' ? '中文' : 'EN'}
         </button>

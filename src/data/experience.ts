@@ -3,7 +3,7 @@ export const expData = {
     {
       org: 'IQVIA Business Technology Consulting', role: 'Business Technology Consulting Intern', loc: 'Shanghai', period: 'Jul 2026 – Present', present: true,
       tags: ['Life Sciences IT', 'Business Analysis', 'AI Glass / E-Doc'],
-      img: '/gallery/iqvia-jd.jpeg', abbr: 'IQ', color: '#00a3e0',
+      img: '/gallery/iqvia-logo.png', abbr: 'IQ', color: '#00a3e0',
       url: 'https://www.iqvia.com',
       detail: `IQVIA is a global healthcare data, technology, and consulting company serving life sciences clients across clinical, commercial, compliance, and digital transformation work. In the business technology consulting team, I support product requirement analysis, workshop material preparation, user-flow mapping, testing scripts, documentation, and cross-functional communication for pharmaceutical digital products.
 
@@ -58,7 +58,7 @@ For Bayer's AI Glass solution, I support solution research and business design a
     {
       org: 'IQVIA 商业科技咨询', role: '商业科技咨询实习生', loc: '上海', period: '2026年7月 – 至今', present: true,
       tags: ['医药数字化', '需求分析', 'AI眼镜/E-Doc'],
-      img: '/gallery/iqvia-jd.jpeg', abbr: 'IQ', color: '#00a3e0',
+      img: '/gallery/iqvia-logo.png', abbr: 'IQ', color: '#00a3e0',
       url: 'https://www.iqvia.com',
       detail: `IQVIA（艾昆纬）是全球领先的医疗健康数据、技术与咨询公司，服务生命科学客户的临床、商业、合规与数字化转型需求。在商业科技咨询团队中，我参与医药行业数字产品的用户需求分析、Workshop材料准备、用户流程梳理、测试脚本撰写、项目文档整理与跨团队沟通。
 

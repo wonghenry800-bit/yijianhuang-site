@@ -15,6 +15,7 @@ export default function Experience() {
   const data = expData[lang];
   const [sel, setSel] = useQuerySelectedIndex(data.length);
   const lead = data[0];
+  const leadIsLogo = lead.img.includes('logo') || lead.img.includes('capital');
 
   return (
     <VisionPageShell dark accent="#00a3e0">
@@ -43,7 +44,18 @@ export default function Experience() {
             transition={{ delay: 0.18, duration: 0.72, ease: [0.22, 1, 0.36, 1] }}
           >
             <div className="experience-device-screen">
-              <Image src={publicImage(lead.img)} alt={lead.org} fill priority sizes="(max-width: 900px) 86vw, 420px" style={{ objectFit: 'cover' }} />
+              <Image
+                src={publicImage(lead.img)}
+                alt={lead.org}
+                fill
+                priority
+                sizes="(max-width: 900px) 86vw, 420px"
+                style={{
+                  objectFit: leadIsLogo ? 'contain' : 'cover',
+                  padding: leadIsLogo ? 34 : 0,
+                  background: leadIsLogo ? '#fff' : undefined,
+                }}
+              />
             </div>
             <div className="experience-device-caption">
               <span>{lead.org}</span>
@@ -59,7 +71,10 @@ export default function Experience() {
           </div>
 
           <div className="experience-ultra-grid">
-            {data.map((item, i) => (
+            {data.map((item, i) => {
+              const isLogo = item.img.includes('logo') || item.img.includes('capital');
+
+              return (
               <motion.button
                 type="button"
                 key={`${item.org}-${item.period}`}
@@ -71,8 +86,14 @@ export default function Experience() {
                 transition={{ duration: 0.62, delay: Math.min(i * 0.05, 0.25), ease: [0.22, 1, 0.36, 1] }}
                 style={{ '--card-accent': item.color } as CSSProperties}
               >
-                <div className="experience-card-image">
-                  <Image src={publicImage(item.img)} alt={item.org} fill sizes="(max-width: 900px) 100vw, 520px" style={{ objectFit: 'cover' }} />
+                <div className={`experience-card-image ${isLogo ? 'cinematic-logo-frame' : ''}`}>
+                  <Image
+                    src={publicImage(item.img)}
+                    alt={item.org}
+                    fill
+                    sizes="(max-width: 900px) 100vw, 520px"
+                    style={{ objectFit: isLogo ? 'contain' : 'cover' }}
+                  />
                 </div>
                 <div className="experience-card-copy">
                   <div className="experience-card-topline">
@@ -92,7 +113,8 @@ export default function Experience() {
                   </div>
                 </div>
               </motion.button>
-            ))}
+              );
+            })}
           </div>
         </section>
       </main>
@@ -106,8 +128,19 @@ export default function Experience() {
               onClick={e => e.stopPropagation()}
               className="liquid-glass-panel"
               style={{ background: '#1c1c1e', borderRadius: 24, maxWidth: 680, width: '100%', overflow: 'hidden', border: '0.5px solid rgba(255,255,255,0.12)', boxShadow: '0 32px 80px rgba(0,0,0,0.5)' }}>
-              <div style={{ aspectRatio: '16/10', overflow: 'hidden', background: '#2c2c2e', position: 'relative' }}>
-                <Image src={publicImage(data[sel].img)} alt={data[sel].org} fill sizes="(max-width: 768px) 100vw, 680px" style={{ objectFit: 'cover', opacity: 0.9 }} />
+              <div style={{ aspectRatio: '16/10', overflow: 'hidden', background: '#fff', position: 'relative' }}>
+                <Image
+                  src={publicImage(data[sel].img)}
+                  alt={data[sel].org}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 680px"
+                  style={{
+                    objectFit: data[sel].img.includes('logo') || data[sel].img.includes('capital') ? 'contain' : 'cover',
+                    padding: data[sel].img.includes('logo') || data[sel].img.includes('capital') ? 34 : 0,
+                    opacity: 0.9,
+                    background: data[sel].img.includes('logo') || data[sel].img.includes('capital') ? '#fff' : '#2c2c2e',
+                  }}
+                />
               </div>
               <div style={{ padding: 28 }}>
                 <div style={{ display: 'inline-block', fontSize: 10, fontWeight: 700, padding: '3px 10px', borderRadius: 100, background: data[sel].color, color: '#fff', letterSpacing: 0, textTransform: 'uppercase', marginBottom: 12 }}>{data[sel].loc}</div>
