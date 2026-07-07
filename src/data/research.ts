@@ -47,7 +47,7 @@ export const researchData = {
       institution: 'Independent Study',
       loc: 'Shunde / Zhuhai Hengqin',
       tag: 'Field Research',
-      imgs: ['/gallery/UNDP.png'],
+      imgs: ['/gallery/macau-novo-bairro.jpg'],
       detail: `This fieldwork project examined grassroots governance models at two key GBA locations: Shunde (a district of Foshan celebrated for its pragmatic, business-friendly local governance) and Zhuhai's Hengqin New Area (the special cooperation zone jointly administered by Guangdong and Macao since 2021).\n\nThrough structured interviews with local government officials, community workers, and residents, I assessed how each location manages public services, cross-border administration, and community governance. The research compared Shunde's market-oriented village collective model with Hengqin's innovative dual-governance framework — where Guangdong and Macao share administrative authority in a pilot for deeper institutional integration. The project produced a policy report with practical recommendations for enhancing local governance capacity and integrated urban-rural management across the GBA's complex jurisdictional landscape.`
     },
   ],
@@ -99,7 +99,7 @@ export const researchData = {
       institution: '独立研究',
       loc: '顺德/珠海横琴',
       tag: '实地调研',
-      imgs: ['/gallery/UNDP.png'],
+      imgs: ['/gallery/macau-novo-bairro.jpg'],
       detail: `本项目对两处大湾区典型地点的基层治理模式进行田野调查：以务实、亲商著称的顺德（佛山市辖区），以及自2021年由粤澳双方联合管理的横琴新区（珠海）。\n\n通过与地方政府官员、社区工作者及居民的结构化访谈，评估各地在公共服务提供、跨境行政管理与社区治理方面的实践。研究对比了顺德以市场为导向的村集体经济模式与横琴创新性双轨治理框架——后者是广东与澳门在深度制度融合道路上的政策试验。研究产出政策报告，提出在大湾区复杂管辖格局下增强基层治理能力与城乡一体化管理的可行建议。`
     },
   ],

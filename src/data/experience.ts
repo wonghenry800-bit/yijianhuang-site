@@ -1,6 +1,17 @@
 export const expData = {
   en: [
     {
+      org: 'IQVIA Business Technology Consulting', role: 'Business Technology Consulting Intern', loc: 'Shanghai', period: 'Jul 2026 – Present', present: true,
+      tags: ['Life Sciences IT', 'Business Analysis', 'AI Glass / E-Doc'],
+      img: '/gallery/iqvia-jd.jpeg', abbr: 'IQ', color: '#00a3e0',
+      url: 'https://www.iqvia.com',
+      detail: `IQVIA is a global healthcare data, technology, and consulting company serving life sciences clients across clinical, commercial, compliance, and digital transformation work. In the business technology consulting team, I support product requirement analysis, workshop material preparation, user-flow mapping, testing scripts, documentation, and cross-functional communication for pharmaceutical digital products.
+
+My work spans two active client streams. For Boehringer Ingelheim, I support E-Doc and logistics-related systems covering employee dining, meeting operations, meeting transportation, approvals, QR-code registration, sign-in, participant management, budget validation, and integration with enterprise platforms such as Veeva and WeCom SSO. I help translate business rules into functional specifications, compare old and new FS layouts, organize user manuals, and prepare UAT-oriented documentation for mobile and web scenarios.
+
+For Bayer's AI Glass solution, I support solution research and business design around smart pharmacy visits: hands-free first-person capture, HUD key-message prompts, voice-based KM delivery validation, product and shelf visual recognition, display compliance checks, visit summaries, GPS check-in, CRM/task integration, privacy-conscious edge ASR, and modular agent workflows. The work combines consulting, product design, pharmaceutical compliance, and AI-enabled field-force productivity.`
+    },
+    {
       org: 'State Council DRC', role: 'Intern Analyst', loc: 'Beijing / Remote', period: 'Dec 2025 – Present', present: true,
       tags: ['Policy Tracking', 'Think Tank', 'Bay Area Analysis'],
       img: '/gallery/国务院发展研究中心.png', abbr: 'SC', color: '#1d1d1f',
@@ -24,9 +35,9 @@ export const expData = {
     {
       org: 'UN Youth Training Program', role: 'Member of China Team', loc: 'Geneva, Switzerland', period: 'Jun 2024 – Jul 2024', present: false,
       tags: ['SDG 5 / 8 / 16', 'UN Human Rights Council', 'Mediation'],
-      img: '/gallery/UNDP.png', abbr: 'UN', color: '#34aadc',
+      img: '/gallery/unytp-china-delegate.jpg', abbr: 'UN', color: '#34aadc',
       url: 'https://www.un.org',
-      detail: `The UN Youth Training Program (联合国青年人才培养计划) brought together high-achieving university students from China to Geneva for an immersive experience at the heart of global governance. The program combined site visits to UN agencies, workshops with diplomats and NGO representatives, and simulated UN proceedings across multiple committees.\n\nAs a member of the China delegation, I delivered a speech at the UN Human Rights Council advocating for SDG 16 (Peace, Justice, and Strong Institutions), connecting China's governance experience to global institutional development. In a simulated mediation exercise, I acted as mediator between China and Palestine in humanitarian aid negotiations — successfully facilitating agreement on a resolution addressing emergency aid delivery. I also represented Iran in Model UN climate negotiations, balancing economic development interests with environmental commitments. The program concluded with two SDG policy proposals I authored: one on post-COVID employment recovery and economic growth in China (SDG 8), and another analyzing the rise of Chinese feminism in the 21st century (SDG 5).`
+      detail: `The UN Youth Training Program (联合国青年人才培养计划) brought together high-achieving university students from China to Geneva for an immersive experience at the heart of global governance. The program combined site visits to UN agencies, workshops with diplomats and NGO representatives, and simulated UN proceedings across multiple committees.\n\nAs a member of the China Youth Delegate team, I participated in UN-themed training and policy simulation activities focused on sustainable development, diplomacy, and multilateral negotiation. I delivered a speech at the UN Human Rights Council advocating for SDG 16 (Peace, Justice, and Strong Institutions), connecting China's governance experience to global institutional development. In a simulated mediation exercise, I acted as mediator between China and Palestine in humanitarian aid negotiations — successfully facilitating agreement on a resolution addressing emergency aid delivery. I also represented Iran in Model UN climate negotiations, balancing economic development interests with environmental commitments. The program concluded with two SDG policy proposals I authored: one on post-COVID employment recovery and economic growth in China (SDG 8), and another analyzing the rise of Chinese feminism in the 21st century (SDG 5).`
     },
     {
       org: 'UNDP China', role: 'Sino-US Trade Project Assistant', loc: 'Shenzhen', period: 'Jan 2024 – Feb 2024', present: false,
@@ -38,12 +49,23 @@ export const expData = {
     {
       org: 'Guangdong Rongtai VC', role: 'Investment Analyst Intern', loc: 'Guangzhou', period: 'Jul 2023 – Sept 2023', present: false,
       tags: ['Due Diligence', 'Clean Energy / HealthTech', 'IPO Analysis'],
-      img: '/gallery/粤港澳大湾区研究院.jpeg', abbr: 'VC', color: '#ff9500',
+      img: '/gallery/chongye-capital.jpg', abbr: 'VC', color: '#ff9500',
       url: null,
       detail: `Guangdong Rongtai Venture Capital (广东融泰私募基金管理有限公司) is a Guangzhou-based private equity fund focused on early and growth-stage investments across China's strategic emerging industries, including clean energy, healthcare technology, smart manufacturing, and digital services.\n\nAs an Investment Analyst Intern, I assessed regulatory and policy risks for investment candidates — analyzing government guidelines, market access policies, and compliance frameworks to evaluate whether each company's growth trajectory was aligned with national industrial priorities. I supported due diligence for four portfolio candidates, including financial statement validation, site inspections, and executive interviews. I was responsible for evaluating business plan viability, identifying policy and regulatory risks, and producing concise investment memos. I also conducted sector-level research on new energy vehicle policy changes, market access conditions, and government subsidy programs — helping the fund assess how evolving regulatory environments affect startup growth prospects. Additionally, I reviewed IPO case studies to understand how policy and financial regulatory frameworks shape exit strategies and valuation multiples.`
     },
   ],
   cn: [
+    {
+      org: 'IQVIA 商业科技咨询', role: '商业科技咨询实习生', loc: '上海', period: '2026年7月 – 至今', present: true,
+      tags: ['医药数字化', '需求分析', 'AI眼镜/E-Doc'],
+      img: '/gallery/iqvia-jd.jpeg', abbr: 'IQ', color: '#00a3e0',
+      url: 'https://www.iqvia.com',
+      detail: `IQVIA（艾昆纬）是全球领先的医疗健康数据、技术与咨询公司，服务生命科学客户的临床、商业、合规与数字化转型需求。在商业科技咨询团队中，我参与医药行业数字产品的用户需求分析、Workshop材料准备、用户流程梳理、测试脚本撰写、项目文档整理与跨团队沟通。
+
+目前工作覆盖两条客户项目线。其一是勃林格殷格翰 E-Doc 与后勤相关系统，涉及员工用餐、会议准备与执行、会议用车、审批流、二维码注册签到、参会人管理、预算校验，以及与 Veeva、企业微信 SSO 等平台的数据协同。我协助把复杂业务规则转化为功能需求，比较新旧 FS 布局，整理终端用户手册，并为移动端与 Web 端场景准备 UAT 相关文档。
+
+其二是拜耳 AI 眼镜方案，围绕药店巡访与一线代表工作流进行方案研究与业务设计，包括第一视角拍摄、HUD 关键信息提示、语音 Key Message 传递校验、药品与货架视觉识别、陈列合规检查、访后总结、GPS 打卡、CRM/任务集成、端侧 ASR 隐私保护，以及模块化智能体编排。该项目把咨询、产品设计、医药合规与 AI 赋能销售效率结合在一起。`
+    },
     {
       org: '国务院发展研究中心', role: '实习分析师', loc: '北京/远程', period: '2025年12月 – 至今', present: true,
       tags: ['政策跟踪', '智库研究', '湾区分析'],
@@ -68,9 +90,9 @@ export const expData = {
     {
       org: '联合国青年人才培养计划', role: '中国代表队成员', loc: '日内瓦，瑞士', period: '2024年6月 – 2024年7月', present: false,
       tags: ['SDG 5/8/16', '联合国人权理事会', '调解谈判'],
-      img: '/gallery/UNDP.png', abbr: '日', color: '#34aadc',
+      img: '/gallery/unytp-china-delegate.jpg', abbr: '日', color: '#34aadc',
       url: 'https://www.un.org',
-      detail: `联合国青年人才培养计划汇聚中国顶尖高校学生赴日内瓦，在全球治理的核心场域开展沉浸式体验。项目融合了对联合国各机构的实地参观、与外交官和NGO代表的工作坊，以及跨多个委员会的模拟联合国程序。\n\n作为中国代表团成员，我在联合国人权理事会发表关于SDG16（和平、正义与强大机构）的演讲，将中国治理经验与全球制度建设进行深度连接。在模拟调解中，我担任中巴人道主义援助谈判调解员，成功推动关于紧急援助交付的决议通过。我还代表伊朗参与模拟联合国气候谈判，在经济发展利益与环境承诺之间寻求平衡。项目最终以两份SDG政策提案收尾：一份聚焦后疫情时代中国就业与经济增长（SDG8），另一份分析21世纪中国女性主义的崛起及影响（SDG5）。`
+      detail: `联合国青年人才培养计划汇聚中国顶尖高校学生赴日内瓦，在全球治理的核心场域开展沉浸式体验。项目融合了对联合国各机构的实地参观、与外交官和NGO代表的工作坊，以及跨多个委员会的模拟联合国程序。\n\n作为中国代表队成员，我参与了联合国主题培训与政策模拟活动，并在联合国人权理事会场景中发表关于SDG16（和平、正义与强大机构）的演讲，将中国治理经验与全球制度建设进行深度连接。在模拟调解中，我担任中巴人道主义援助谈判调解员，成功推动关于紧急援助交付的决议通过。我还代表伊朗参与模拟联合国气候谈判，在经济发展利益与环境承诺之间寻求平衡。项目最终以两份SDG政策提案收尾：一份聚焦后疫情时代中国就业与经济增长（SDG8），另一份分析21世纪中国女性主义的崛起及影响（SDG5）。`
     },
     {
       org: '联合国开发计划署（UNDP）中国', role: '中美贸易项目助理', loc: '深圳', period: '2024年1月 – 2024年2月', present: false,
@@ -82,7 +104,7 @@ export const expData = {
     {
       org: '广东融泰私募基金管理有限公司', role: '投资分析师实习生', loc: '广州', period: '2023年7月 – 2023年9月', present: false,
       tags: ['尽职调查', '新能源/医疗科技', 'IPO分析'],
-      img: '/gallery/粤港澳大湾区研究院.jpeg', abbr: '融', color: '#ff9500',
+      img: '/gallery/chongye-capital.jpg', abbr: '融', color: '#ff9500',
       url: null,
       detail: `广东融泰私募基金管理有限公司是一家总部位于广州的私募股权基金，专注于清洁能源、医疗科技、智能制造与数字服务等战略新兴产业的早期及成长期投资。\n\n作为投资分析师实习生，我评估投资候选企业的监管与政策风险——分析政府指导方针、市场准入政策与合规框架，判断各企业的成长路径是否符合国家产业优先方向。我为四家投资候选支持尽职调查，包括财务报表核实、实地考察与管理层访谈，负责评估商业计划可行性、识别政策与监管风险，并撰写简洁的投资备忘录。同时开展新能源汽车行业政策变迁、市场准入条件与政府补贴项目的专题研究，协助基金评估监管环境演变对初创企业成长前景的影响。此外，通过研究上市公司案例，深入理解政策与金融监管框架如何影响退出策略与估值乘数。`
     },

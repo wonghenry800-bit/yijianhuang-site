@@ -86,13 +86,13 @@ export const homeContent: Record<Language, HomeHeroContent> = {
 
 export const homeStats: Record<Language, HomeStat[]> = {
   en: [
-    { n: '6+', l: 'Internships' },
+    { n: '7+', l: 'Internships' },
     { n: '4', l: 'Policy briefs' },
     { n: '6', l: 'Languages' },
     { n: '3+', l: 'Countries' },
   ],
   cn: [
-    { n: '6+', l: '实习经历' },
+    { n: '7+', l: '实习经历' },
     { n: '4', l: '政策简报' },
     { n: '6', l: '语言' },
     { n: '3+', l: '国家' },

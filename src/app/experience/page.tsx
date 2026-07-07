@@ -1,5 +1,6 @@
 'use client';
 
+import type { CSSProperties } from 'react';
 import Image from 'next/image';
 import { useLanguage } from '../../components/LanguageContext';
 import Navbar from '../../components/Navbar';
@@ -13,88 +14,117 @@ export default function Experience() {
   const { lang, setLang } = useLanguage();
   const data = expData[lang];
   const [sel, setSel] = useQuerySelectedIndex(data.length);
+  const lead = data[0];
 
   return (
-    <VisionPageShell dark accent="#30d158">
+    <VisionPageShell dark accent="#00a3e0">
       <Navbar lang={lang} setLang={setLang} currentPage="experience" dark />
 
-      <div className="vision-hero-card liquid-glass-panel" style={{ maxWidth: 760, margin: '0 auto', padding: '100px 24px 60px', textAlign: 'center' }}>
-        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#2997ff', marginBottom: 16 }}>Career</motion.p>
-        <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 }}
-          style={{ fontSize: 'clamp(40px, 6vw, 68px)', fontWeight: 700, color: '#f5f5f7', letterSpacing: 0, lineHeight: 1.0, marginBottom: 16 }}>
-          {lang === 'en' ? 'Experience' : '工作经历'}
-        </motion.h1>
-        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}
-          style={{ fontSize: 17, fontWeight: 300, color: 'rgba(255,255,255,0.4)' }}>
-          {lang === 'en' ? "Where I've worked and what I've built" : '我的工作经历与成果'}
-        </motion.p>
-      </div>
+      <main className="experience-ultra-page">
+        <section className="experience-ultra-hero">
+          <motion.div className="experience-orbit" aria-hidden="true" animate={{ rotate: 360 }} transition={{ duration: 32, repeat: Infinity, ease: 'linear' }} />
+          <div className="experience-hero-copy">
+            <motion.p className="apple-eyebrow" initial={{ opacity: 0 }} animate={{ opacity: 1 }} style={{ color: '#64d2ff', marginBottom: 16 }}>
+              {lang === 'en' ? 'Career System' : '职业系统'}
+            </motion.p>
+            <motion.h1 className="apple-display-title" initial={{ opacity: 0, y: 30, filter: 'blur(14px)' }} animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }} transition={{ duration: 0.78, ease: [0.22, 1, 0.36, 1] }}>
+              {lang === 'en' ? 'Consulting, policy, and technology in motion.' : '咨询、政策与技术，在同一个轨道上。'}
+            </motion.h1>
+            <motion.p className="apple-centered-copy" initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.18 }}>
+              {lang === 'en' ? 'From life-sciences digital systems to policy research and global business development.' : '从生命科学数字系统，到政策研究与全球化商业拓展。'}
+            </motion.p>
+          </div>
+          <motion.button
+            type="button"
+            className="experience-hero-device liquid-glass-panel"
+            onClick={() => setSel(0)}
+            initial={{ opacity: 0, scale: 0.92, y: 24 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ delay: 0.18, duration: 0.72, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <div className="experience-device-screen">
+              <Image src={publicImage(lead.img)} alt={lead.org} fill priority sizes="(max-width: 900px) 86vw, 420px" style={{ objectFit: 'cover' }} />
+            </div>
+            <div className="experience-device-caption">
+              <span>{lead.org}</span>
+              <strong>{lead.role}</strong>
+            </div>
+          </motion.button>
+        </section>
 
-      <div className="liquid-glass-panel liquid-glass-panel--light" style={{ background: 'rgba(255,255,255,0.86)', borderRadius: '24px 24px 0 0', minHeight: '60vh', padding: '48px 24px 80px', backdropFilter: 'blur(28px)', WebkitBackdropFilter: 'blur(28px)' }}>
-        <div style={{ maxWidth: 740, margin: '0 auto' }}>
-          <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#86868b', paddingBottom: 12, borderBottom: '0.5px solid rgba(0,0,0,0.08)', marginBottom: 0 }}>
-            {lang === 'en' ? `${data.length} positions` : `${data.length}段经历`}
-          </p>
-          <div className="vision-list-panel liquid-glass-panel liquid-glass-panel--light" style={{ borderRadius: '0 0 18px 18px', overflow: 'hidden', border: '0.5px solid rgba(0,0,0,0.08)', borderTop: 'none' }}>
+        <section className="experience-ultra-section">
+          <div className="apple-section-header">
+            <p className="apple-eyebrow" style={{ color: '#30d158', marginBottom: 14 }}>{lang === 'en' ? `${data.length} positions` : `${data.length}段经历`}</p>
+            <h2 className="apple-section-title">{lang === 'en' ? 'Built across systems, markets, and institutions.' : '在系统、市场与机构之间积累经验。'}</h2>
+          </div>
+
+          <div className="experience-ultra-grid">
             {data.map((item, i) => (
-              <motion.div key={i} className="vision-interactive-card" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.05 }}
+              <motion.button
+                type="button"
+                key={`${item.org}-${item.period}`}
+                className={`experience-ultra-card liquid-glass-panel vision-interactive-card ${i === 0 ? 'experience-ultra-card--wide' : ''}`}
                 onClick={() => setSel(i)}
-                style={{ display: 'flex', alignItems: 'center', gap: 16, padding: '16px 22px', cursor: 'pointer', borderBottom: i < data.length - 1 ? '0.5px solid rgba(0,0,0,0.06)' : 'none', background: 'rgba(0,0,0,0.01)', transition: 'background 0.15s' }}
-                onMouseEnter={e => (e.currentTarget.style.background = '#f5f5f7')}
-                onMouseLeave={e => (e.currentTarget.style.background = 'rgba(0,0,0,0.01)')}>
-                <div style={{ width: 44, height: 44, borderRadius: 12, overflow: 'hidden', background: '#f5f5f7', border: '0.5px solid rgba(0,0,0,0.08)', flexShrink: 0, position: 'relative' }}>
-                  <Image src={publicImage(item.img)} alt={item.abbr} fill sizes="44px" style={{ objectFit: 'cover' }} onError={e => { (e.currentTarget as HTMLImageElement).style.display = 'none' }} />
+                initial={{ opacity: 0, y: 30, filter: 'blur(12px)' }}
+                whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.62, delay: Math.min(i * 0.05, 0.25), ease: [0.22, 1, 0.36, 1] }}
+                style={{ '--card-accent': item.color } as CSSProperties}
+              >
+                <div className="experience-card-image">
+                  <Image src={publicImage(item.img)} alt={item.org} fill sizes="(max-width: 900px) 100vw, 520px" style={{ objectFit: 'cover' }} />
                 </div>
-                <div style={{ flex: 1, minWidth: 0 }}>
-                  <div style={{ fontSize: 14, fontWeight: 600, color: '#1d1d1f', letterSpacing: 0 }}>{item.org}</div>
-                  <div style={{ fontSize: 12, color: '#6e6e73', marginTop: 2 }}>{item.role}</div>
-                  <div style={{ display: 'flex', gap: 5, marginTop: 6, flexWrap: 'wrap' }}>
-                    {item.tags.map((tag, j) => (
-                      <span key={j} style={{ fontSize: 10, fontWeight: 600, padding: '2px 8px', borderRadius: 100, background: 'rgba(0,0,0,0.05)', color: '#6e6e73' }}>{tag}</span>
-                    ))}
+                <div className="experience-card-copy">
+                  <div className="experience-card-topline">
+                    <span>{item.loc}</span>
+                    {item.present && <span className="experience-live-dot" />}
+                  </div>
+                  <h3>{item.org}</h3>
+                  <p>{item.role}</p>
+                  <div className="experience-card-tags">
+                    {item.tags.slice(0, 3).map(tag => <span key={tag}>{tag}</span>)}
+                  </div>
+                  <div className="experience-card-footer">
+                    <span>{item.period}</span>
+                    <span className="apple-card-arrow" aria-hidden="true">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M7 17L17 7M9 7h8v8" /></svg>
+                    </span>
                   </div>
                 </div>
-                <div style={{ flexShrink: 0, textAlign: 'right' }}>
-                  <div style={{ fontSize: 11, color: '#aeaeb2', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', gap: 5 }}>
-                    {item.period}
-                    {item.present && <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#30d158', display: 'inline-block' }} />}
-                  </div>
-                  <div style={{ fontSize: 10, color: '#c7c7cc', marginTop: 2 }}>{item.loc}</div>
-                </div>
-              </motion.div>
+              </motion.button>
             ))}
           </div>
-        </div>
-      </div>
+        </section>
+      </main>
 
       <AnimatePresence>
         {sel !== null && (
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setSel(null)}
-            style={{ position: 'fixed', inset: 0, zIndex: 200, display: 'flex', alignItems: 'flex-start', justifyContent: 'center', padding: '40px 24px', background: 'rgba(0,0,0,0.65)', backdropFilter: 'blur(24px)', overflowY: 'auto' }}>
-            <motion.div initial={{ scale: 0.95, y: 20, opacity: 0 }} animate={{ scale: 1, y: 0, opacity: 1 }} exit={{ scale: 0.95, opacity: 0 }}
+            style={{ position: 'fixed', inset: 0, zIndex: 200, display: 'flex', alignItems: 'flex-start', justifyContent: 'center', padding: '40px 24px', background: 'rgba(0,0,0,0.68)', backdropFilter: 'blur(26px)', overflowY: 'auto' }}>
+            <motion.div initial={{ scale: 0.94, y: 22, opacity: 0, filter: 'blur(12px)' }} animate={{ scale: 1, y: 0, opacity: 1, filter: 'blur(0px)' }} exit={{ scale: 0.95, opacity: 0, filter: 'blur(10px)' }}
               transition={{ type: 'spring', damping: 28, stiffness: 300 }}
               onClick={e => e.stopPropagation()}
               className="liquid-glass-panel"
-              style={{ background: '#1c1c1e', borderRadius: 22, maxWidth: 560, width: '100%', overflow: 'hidden', border: '0.5px solid rgba(255,255,255,0.12)', boxShadow: '0 32px 80px rgba(0,0,0,0.5)' }}>
-              <div style={{ aspectRatio: '16/9', overflow: 'hidden', background: '#2c2c2e', position: 'relative' }}>
-                <Image src={publicImage(data[sel].img)} alt={data[sel].org} fill sizes="(max-width: 768px) 100vw, 560px" style={{ objectFit: 'cover', opacity: 0.85 }} />
+              style={{ background: '#1c1c1e', borderRadius: 24, maxWidth: 680, width: '100%', overflow: 'hidden', border: '0.5px solid rgba(255,255,255,0.12)', boxShadow: '0 32px 80px rgba(0,0,0,0.5)' }}>
+              <div style={{ aspectRatio: '16/10', overflow: 'hidden', background: '#2c2c2e', position: 'relative' }}>
+                <Image src={publicImage(data[sel].img)} alt={data[sel].org} fill sizes="(max-width: 768px) 100vw, 680px" style={{ objectFit: 'cover', opacity: 0.9 }} />
               </div>
               <div style={{ padding: 28 }}>
-                <div style={{ display: 'inline-block', fontSize: 10, fontWeight: 700, padding: '3px 10px', borderRadius: 100, background: data[sel].color, color: '#fff', letterSpacing: '0.04em', textTransform: 'uppercase', marginBottom: 12 }}>{data[sel].loc}</div>
-                <div style={{ fontSize: 20, fontWeight: 700, color: '#f5f5f7', letterSpacing: 0 }}>{data[sel].org}</div>
-                <div style={{ fontSize: 13, color: '#2997ff', marginTop: 4 }}>{data[sel].role}</div>
-                <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.3)', marginTop: 4, display: 'flex', alignItems: 'center', gap: 6 }}>
+                <div style={{ display: 'inline-block', fontSize: 10, fontWeight: 700, padding: '3px 10px', borderRadius: 100, background: data[sel].color, color: '#fff', letterSpacing: 0, textTransform: 'uppercase', marginBottom: 12 }}>{data[sel].loc}</div>
+                <div style={{ fontSize: 24, fontWeight: 740, color: '#f5f5f7', letterSpacing: 0 }}>{data[sel].org}</div>
+                <div style={{ fontSize: 14, color: '#64d2ff', marginTop: 4 }}>{data[sel].role}</div>
+                <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.34)', marginTop: 4, display: 'flex', alignItems: 'center', gap: 6 }}>
                   {data[sel].period}
                   {data[sel].present && <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#30d158', display: 'inline-block' }} />}
                 </div>
                 {data[sel].url && (
                   <a href={data[sel].url!} target="_blank" rel="noopener noreferrer"
-                    style={{ display: 'inline-flex', alignItems: 'center', gap: 4, fontSize: 12, color: '#2997ff', marginTop: 8, textDecoration: 'none' }}>
+                    style={{ display: 'inline-flex', alignItems: 'center', gap: 4, fontSize: 12, color: '#64d2ff', marginTop: 8, textDecoration: 'none' }}>
                     {data[sel].url}
                     <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" /></svg>
                   </a>
                 )}
-                <div style={{ fontSize: 14, color: 'rgba(255,255,255,0.55)', marginTop: 18, lineHeight: 1.85, whiteSpace: 'pre-line' }}>{data[sel].detail}</div>
+                <div style={{ fontSize: 14, color: 'rgba(255,255,255,0.62)', marginTop: 18, lineHeight: 1.85, whiteSpace: 'pre-line' }}>{data[sel].detail}</div>
                 <button className="liquid-glass-button liquid-glass-button--primary" onClick={() => setSel(null)} style={{ marginTop: 24, width: '100%', padding: '12px 0', borderRadius: 100, color: '#fff', fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
                   {lang === 'en' ? 'Close' : '关闭'}
                 </button>
