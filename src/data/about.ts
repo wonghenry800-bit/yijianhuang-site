@@ -1,16 +1,16 @@
 export const eduData = {
   en: [
     {
-      abbr: 'CE', school: 'China Europe International Business School (CEIBS)', prog: 'Global MBA (Full-Time)', period: '2026–2027', loc: 'Shanghai, China',
+      abbr: 'CE', school: 'China Europe International Business School (CEIBS)', prog: 'Global Master in Management', period: '2026–2027', loc: 'Shanghai, China',
       url: 'https://www.ceibs.edu',
       imgs: ['/gallery/ceibs.jpg'],
-      detail: `Founded in 1994 through a partnership between the Chinese government and the European Commission, CEIBS (中欧国际工商学院) is Asia's #1 business school — ranked #1 in Asia and #8 globally by the Financial Times MBA Rankings 2026. Headquartered in Shanghai's Pudong district with campuses in Beijing, Shenzhen, Zurich, and Accra, CEIBS is the only business school in mainland China accredited by both EQUIS and AACSB.\n\nThe CEIBS Full-Time MBA is a 16-month intensive program built around the philosophy of "China Depth, Global Breadth." The curriculum includes 16 core courses and 40+ electives spanning finance, strategy, operations, and entrepreneurship, supplemented by an Integration Consulting Project and international exchange modules at 40+ elite partner schools worldwide. With a community of 30,000+ alumni across 90+ countries, the program develops leaders who can navigate the intersection of China's economy and global business.`
+      detail: `Founded in 1994 through a partnership between the Chinese government and the European Commission, CEIBS (中欧国际工商学院) is one of Asia's leading business schools, headquartered in Shanghai with campuses and offices across China, Europe, and Africa.\n\nThe CEIBS Global Master in Management is a graduate management program focused on China depth, global business fundamentals, strategy, finance, operations, innovation, and cross-cultural leadership. The program supports my transition from economics and policy research into applied management, consulting, and technology-enabled business problem solving.`
     },
     {
-      abbr: 'ES', school: 'ESCP Business School', prog: 'Master in Global Management (MGM)', period: '2027–2029', loc: 'Paris / Berlin / London / Madrid / Turin / Warsaw',
+      abbr: 'ES', school: 'ESCP Business School', prog: 'Global Master in Management', period: '2027–2029', loc: 'Paris / Berlin / London / Madrid / Turin / Warsaw',
       url: 'https://www.escp.eu',
       imgs: ['/gallery/ESCP.jpg'],
-      detail: `Founded in 1819, ESCP is the world's oldest business school and one of the most prestigious in Europe. The Master in Global Management is its flagship postgraduate program — a truly pan-European experience spanning six campuses: Paris, Berlin, London, Madrid, Turin, and Warsaw. Students rotate between at least three campuses, immersing themselves in different business cultures and regulatory environments throughout the two-year program.\n\nThe MGM curriculum focuses on strategic management, international finance, cross-cultural leadership, and digital transformation. Known for its rigorously diverse student body (typically 40+ nationalities per cohort), ESCP consistently ranks among Europe's top 5 business schools. The program is designed for graduates building careers across borders — combining deep academic rigor with real-world consulting projects and an international alumni network spanning 150+ countries.`
+      detail: `Founded in 1819, ESCP is the world's oldest business school and one of Europe's leading management institutions. The Global Master in Management offers a pan-European academic experience across ESCP's campuses in Paris, Berlin, London, Madrid, Turin, and Warsaw.\n\nThe program emphasizes strategic management, international finance, cross-cultural leadership, digital transformation, and consulting-style problem solving. It is designed for graduates building careers across borders, combining academic rigor with real-world projects and a global alumni network.`
     },
     {
       abbr: 'CU', school: 'The Chinese University of Hong Kong, Shenzhen', prog: 'BSc in Economics (Applied Economics), Minor in Philosophy', period: '2022–2026', loc: 'Shenzhen, China',
@@ -33,16 +33,16 @@ export const eduData = {
   ],
   cn: [
     {
-      abbr: 'CE', school: '中欧国际工商学院（CEIBS）', prog: '全球工商管理硕士（MBA）', period: '2026–2027', loc: '上海',
+      abbr: 'CE', school: '中欧国际工商学院（CEIBS）', prog: 'Global Master in Management', period: '2026–2027', loc: '上海',
       url: 'https://www.ceibs.edu',
       imgs: ['/gallery/ceibs.jpg'],
-      detail: `中欧国际工商学院（CEIBS）创立于1994年，由中国政府与欧盟共同发起，是亚洲排名第一的商学院——2026年《金融时报》全球MBA排名中位居亚洲第一、全球第八。总部位于上海浦东，另设北京、深圳、苏黎世和加纳阿克拉校区，是中国大陆唯一同时获得EQUIS和AACSB双重认证的商学院。\n\n中欧全日制MBA为16个月密集项目，以"中国深度、全球广度"为核心理念。课程体系涵盖16门核心课和40余门选修课，横跨金融、战略、运营与创业，并配备整合咨询项目和全球40余所合作院校的交流模块。30,000+名校友遍布90+个国家，项目致力于培养站在中国经济与全球商业交汇点的领袖人才。`
+      detail: `中欧国际工商学院（CEIBS）创立于1994年，由中国政府与欧盟共同发起，是亚洲领先的商学院之一，总部位于上海，并在中国、欧洲与非洲设有校区及办公室。\n\nGlobal Master in Management 项目聚焦中国深度、全球商业基础、战略、金融、运营、创新与跨文化领导力。该项目承接我的经济学与政策研究背景，进一步拓展到管理实践、咨询方法和技术驱动的商业问题解决。`
     },
     {
-      abbr: 'ES', school: 'ESCP商学院', prog: '全球管理硕士（MGM）', period: '2027–2029', loc: '巴黎/柏林/伦敦/马德里/都灵/华沙',
+      abbr: 'ES', school: 'ESCP商学院', prog: 'Global Master in Management', period: '2027–2029', loc: '巴黎/柏林/伦敦/马德里/都灵/华沙',
       url: 'https://www.escp.eu',
       imgs: ['/gallery/ESCP.jpg'],
-      detail: `ESCP创立于1819年，是全球历史最悠久的商学院，也是欧洲最负盛名的顶尖院校之一。全球管理硕士（MGM）是其旗舰研究生项目——真正的泛欧洲学习体验，横跨巴黎、柏林、伦敦、马德里、都灵、华沙六大校区，学生在两年项目期间至少轮转三个校区，深度沉浸于不同商业文化与监管环境。\n\nMGM课程聚焦战略管理、国际金融、跨文化领导力与数字化转型。每届学员通常来自40+个国籍，ESCP长期位列欧洲商学院前五。项目为有志于跨国职业发展的毕业生而设，将严谨的学术训练与真实咨询项目、覆盖150+国家的国际校友网络深度融合。`
+      detail: `ESCP创立于1819年，是全球历史最悠久的商学院，也是欧洲领先的管理学院之一。Global Master in Management 提供横跨巴黎、柏林、伦敦、马德里、都灵、华沙多校区的泛欧洲学习体验。\n\n项目聚焦战略管理、国际金融、跨文化领导力、数字化转型与咨询式问题解决，适合希望在跨国环境中发展的学生，将严谨学术训练与真实项目经验结合。`
     },
     {
       abbr: 'CU', school: '香港中文大学（深圳）', prog: '经济学学士（应用经济学），辅修哲学', period: '2022–2026', loc: '深圳',
@@ -101,7 +101,7 @@ export const skillsDetailed = {
 
 export const aboutCards = {
   en: [
-    { icon: '🎯', t: "Hi — I'm Yijian (Henry)", b: 'Explorer navigating Economics, Philosophy, AI and Policy simultaneously. CUHK-Shenzhen senior, CEIBS MBA 2026, heading to ESCP in 2027.' },
+    { icon: '🎯', t: "Hi — I'm Yijian (Henry)", b: 'Explorer navigating Economics, Philosophy, AI and Policy simultaneously. CUHK-Shenzhen economics undergraduate, CEIBS Global Master in Management 2026, heading to ESCP Global Master in Management in 2027.' },
     { icon: '🏛️', t: 'Policy at the highest levels', b: 'State Council DRC, UNDP, GBA Institute, UN Geneva — researching how rules shape real industries and lives.' },
     { icon: '📊', t: 'Data-driven thinking', b: 'HKU AI Centre, UChicago Harris. Python, Stata, R. Turning raw data into policy insight.' },
     { icon: '💼', t: 'Business & markets', b: 'IQVIA business technology consulting, NetEase gaming licensing, Rongtai VC due diligence. Theory meets practice.' },
@@ -109,7 +109,7 @@ export const aboutCards = {
     { icon: '☕', t: "Let's talk", b: "If any of this resonates, I'm always up for a coffee chat or research collaboration." },
   ],
   cn: [
-    { icon: '🎯', t: '你好，我是黄一健', b: '在经济学、哲学、AI与政策之间自由穿梭的探索者。港中深大四，2026年入读中欧MBA，2027年前往ESCP深造。' },
+    { icon: '🎯', t: '你好，我是黄一健', b: '在经济学、哲学、AI与政策之间自由穿梭的探索者。港中深经济学本科，2026年入读中欧 Global Master in Management，2027年前往 ESCP Global Master in Management 深造。' },
     { icon: '🏛️', t: '政策研究在最高层', b: '国务院发展研究中心、UNDP、大湾区研究院、联合国日内瓦——研究规则如何塑造真实产业与生活。' },
     { icon: '📊', t: '数据驱动的思维', b: '港大AI中心、芝加哥大学。Python、Stata、R。将原始数据转化为政策洞见。' },
     { icon: '💼', t: '商业与市场', b: 'IQVIA 商业科技咨询、网易互娱游戏授权、融泰私募尽调。理论与实践的结合。' },

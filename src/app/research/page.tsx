@@ -10,8 +10,11 @@ import { researchData } from '../../data/research';
 import { publicImage } from '../../utils/publicImage';
 import { motion, AnimatePresence } from 'framer-motion';
 
-function researchSummary(detail: string) {
-  return detail.split('\n')[0].replace(/^`|`$/g, '').slice(0, 190);
+function researchSummary(item: { detail: string; summary?: string }) {
+  if (item.summary) return item.summary;
+
+  const firstSentence = item.detail.split('\n')[0].replace(/^`|`$/g, '').match(/^.*?[.!?。！？]/)?.[0];
+  return firstSentence ?? item.detail.split('\n')[0].replace(/^`|`$/g, '');
 }
 
 export default function Research() {
@@ -83,7 +86,7 @@ export default function Research() {
                   </div>
                   <div className="research-card-title">{item.title}</div>
                   <div className="research-card-subtitle">{item.role} · {item.institution}</div>
-                  <p className="research-card-detail">{researchSummary(item.detail)}</p>
+                  <p className="research-card-detail">{researchSummary(item)}</p>
                   <div className="research-card-footer">
                     <span>{item.loc}</span>
                     <span className="apple-card-arrow" aria-hidden="true">

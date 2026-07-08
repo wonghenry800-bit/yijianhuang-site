@@ -1,7 +1,7 @@
 import type { Language } from '../types/language';
 
 export type ContactItem = {
-  id: 'email' | 'phone' | 'location';
+  id: 'email' | 'phone' | 'location' | 'linkedin' | 'github' | 'resume';
   label: Record<Language, string>;
   value: Record<Language, string>;
   href: string | null;
@@ -25,5 +25,23 @@ export const contactItems: ContactItem[] = [
     label: { en: 'Location', cn: '所在地' },
     value: { en: 'Shanghai, China · Open to worldwide', cn: '中国上海 · 欢迎全球合作' },
     href: null,
+  },
+  {
+    id: 'linkedin',
+    label: { en: 'LinkedIn', cn: 'LinkedIn' },
+    value: { en: 'Yijian Huang', cn: '黄一健' },
+    href: 'https://www.linkedin.com/in/%E4%B8%80%E5%81%A5-%E9%BB%84-0b8b41320/',
+  },
+  {
+    id: 'github',
+    label: { en: 'GitHub', cn: 'GitHub' },
+    value: { en: 'wonghenry800-bit', cn: 'wonghenry800-bit' },
+    href: 'https://github.com/wonghenry800-bit',
+  },
+  {
+    id: 'resume',
+    label: { en: 'Resume', cn: '简历' },
+    value: { en: 'Download PDF', cn: '下载 PDF' },
+    href: '/resume-yijian-huang.pdf',
   },
 ];

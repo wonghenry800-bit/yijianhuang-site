@@ -32,7 +32,8 @@ export const projectsData = {
       tags: ['EdTech', 'AI Dashboard', 'React + Next.js', 'FastAPI', 'Coze RAG', 'DeepSeek-V3.1'],
       color: '#2997ff',
       imgs: ['/gallery/ai/dashboard_1.jpg', '/gallery/ai/dashboard_2.jpg', '/gallery/ai/dashboard_3.jpg', '/gallery/ai/dashboard_4.jpg', '/gallery/ai/dashboard_5.jpg'],
-      overview: 'A one-stop digital academic progress management platform targeting pain points of undergraduate lifecycle management. Integrates academic planning, time management, and career skill mapping for students, academic advisors (AA), and university administrators.',
+      summary: 'Problem: course planning is fragmented across systems. Method: drag-and-drop planning, rule validation, competency radar, and an AA dashboard. Result: a clickable bilingual prototype with 5 interface screens, mock data, and a Coze RAG assistant for advisor queries.',
+      overview: 'A one-stop academic progress platform for undergraduate lifecycle management. It addresses fragmented course information, blind four-year planning, and weak links between courses and career skills. I co-designed the rule-validation logic and led the competency radar concept, turning survey findings from 50+ students into a working prototype with dashboard screenshots, mock data, and an AI assistant workflow.',
       sections: [
         { title: 'The Problem & User Research', content: 'Students face three core problems: information fragmentation (course info scattered across multiple systems), blind planning (no tools to balance GPA goals with career development over 4 years), and skill-course disconnection. Administrators face data silos and decision-making without real data support. Our survey of 50+ students across CUHK-Shenzhen confirmed: "Plan all courses on a drag-and-drop timeline" was the #1 most desired feature, followed by GPA-targeted recommendations and skills visualization.' },
         { title: 'Key Module 1 — Course Drag-and-Drop Planning (My Co-design)', content: '12 semester columns from freshman to senior year. Students drag course cards from a filterable course pool into columns. Real-time validation of prerequisite conflicts, credit limits, and mutual exclusions. Course cards use distinct colors by type (major: deep blue, GE: light green, electives: light orange). I co-designed the rule validation architecture with team leader Tian Haoyu.' },
@@ -50,7 +51,8 @@ export const projectsData = {
       tags: ['SaaS', 'NLP', 'Clustering & Data Mining', 'ML Certainty Scoring', 'RecSys', 'B2B Infrastructure'],
       color: '#8b0000',
       imgs: ['/gallery/ai/tevo_1.jpg', '/gallery/ai/tevo_2.jpg', '/gallery/ai/tevo_3.jpg', '/gallery/ai/tevo_4.jpg', '/gallery/ai/tevo_5.jpg', '/gallery/ai/tevo_6.jpg'],
-      overview: 'An AI-powered SaaS platform shifting retail/F&B franchise expansion from "opinion-heavy manual testing" to "auditable DD-grade verification." Built around the Tévo Operating System — a dual-layer architecture bridging macro market evidence and micro operational execution.',
+      summary: 'Problem: retail and F&B franchise decisions often rely on intuition and small-sample tasting. Method: I designed a market-evidence pipeline plus an AI Waiter recommendation layer. Result: the project produced a system architecture, pitch deck, UI/demo screenshots, and a GO/CONDITIONAL/NO-GO decision output.',
+      overview: 'An AI-powered SaaS concept for retail and F&B franchise expansion. Instead of relying on opinion-heavy manual testing, the system turns social comments, competitor menus, scenario signals, and store-level interaction data into auditable market evidence. My contribution was the dual-layer AI architecture: a macro market-evidence pipeline with certainty scoring, and a micro AI Waiter recommendation workflow connected to POS and store operations.',
       sections: [
         { title: 'The Problem — Guesswork in Franchise Decisions', content: 'In lifestyle and dining, validation is structurally weak due to fragmented consumer preferences. The core question has shifted: not "Is the product good?" but "Is the concept naturally needed?" The biggest risk is entering a market without due-diligence-grade evidence. Tevo A.I. was built to replace guesswork with auditable, structured market evidence.' },
         { title: 'Macro Layer — AI Market Evidence System (My Architecture)', content: 'Pipeline: Semantic Topic Packages → Traceable Crawling → Denoising & Clustering → Extract High-Frequency Scenarios → Certainty Score (0–1). 4 AI technologies: NLP (parses social comments, competitor menus, public discourse), Clustering & Data Mining (denoises massive datasets), Machine Learning (calibrates certainty scoring via pattern recognition), RecSys (micro layer). Fixed output: executive summary + market landscape + risk analysis + GO/CONDITIONAL/NO-GO decision.' },
@@ -69,7 +71,8 @@ export const projectsData = {
       tags: ['教育科技', 'AI仪表盘', 'React + Next.js', 'FastAPI', 'Coze RAG', 'DeepSeek-V3.1'],
       color: '#2997ff',
       imgs: ['/gallery/ai/dashboard_1.jpg', '/gallery/ai/dashboard_2.jpg', '/gallery/ai/dashboard_3.jpg', '/gallery/ai/dashboard_4.jpg', '/gallery/ai/dashboard_5.jpg'],
-      overview: '一个针对本科学业全生命周期管理痛点的一站式数字化学业进度管理平台，整合学业规划、时间管理与职业技能映射，服务学生、学术导师（AA）和大学学术管理者三类用户。',
+      summary: '问题：课程规划信息分散，学生难以做四年路径规划。方法：拖拽排课、规则校验、能力雷达图和学术导师仪表盘。结果：完成包含5张界面截图、模拟数据和 Coze RAG 助手的双语可点击原型。',
+      overview: '一个针对本科学业全生命周期管理痛点的一站式数字化学业进度管理平台，解决课程信息碎片化、四年规划盲区以及课程与职业技能脱节的问题。我参与规则校验逻辑共同设计，并主导能力雷达图概念，将50+名学生调研反馈转化为包含仪表盘截图、模拟数据和AI助手流程的原型。',
       sections: [
         { title: '问题背景与用户调研', content: '学生面临三大核心痛点：信息碎片化（课程信息散落在多个系统）、规划盲目（缺乏工具在四年维度平衡GPA目标与职业发展）、技能与课程脱节。管理员面临数据孤岛和决策缺乏数据支撑。对港中深50+名学生的调研证实："拖拽排课时间线"是最受欢迎的功能（5.51分），其次是GPA目标课程推荐（4.18分）和技能可视化（3.37分）。' },
         { title: '核心模块一——课程拖拽规划时间线（我的共同设计）', content: '从大一到大四横向排列12个学期列。学生从可筛选的课程池中将课程卡片拖入学期列。系统实时验证先修课冲突、学分限制和互斥规则。课程卡片按类型区分颜色（专业课：深蓝；通识课：浅绿；选修课：浅橙）。我与队长田昊宇共同设计了规则校验架构。' },
@@ -87,7 +90,8 @@ export const projectsData = {
       tags: ['SaaS', 'NLP', '聚类与数据挖掘', 'ML确定性评分', '推荐系统', 'B2B基础设施'],
       color: '#8b0000',
       imgs: ['/gallery/ai/tevo_1.jpg', '/gallery/ai/tevo_2.jpg', '/gallery/ai/tevo_3.jpg', '/gallery/ai/tevo_4.jpg', '/gallery/ai/tevo_5.jpg', '/gallery/ai/tevo_6.jpg'],
-      overview: '一个AI驱动的SaaS平台，将零售和餐饮加盟扩张决策从"依赖直觉的人工测试"转变为"可审计的尽职调查级验证"。围绕Tévo操作系统构建——连接宏观市场证据与微观运营执行的双层架构。',
+      summary: '问题：零售和餐饮加盟决策常依赖直觉与小样本试吃。方法：我设计市场证据流水线和 AI Waiter 推荐层。结果：产出系统架构、路演材料、界面/demo截图，以及 GO/条件推进/NO-GO 决策输出格式。',
+      overview: '一个AI驱动的零售与餐饮加盟扩张SaaS概念。系统不再依赖主观判断，而是把社交评论、竞品菜单、场景信号和门店互动数据转化为可审计的市场证据。我的主要贡献是双层AI架构：宏观市场证据流水线与确定性评分，以及连接POS和门店运营的微观AI服务生推荐流程。',
       sections: [
         { title: '核心问题——加盟决策中的猜测陷阱', content: '在生活方式和餐饮品类中，由于消费者偏好高度分散，市场验证结构性薄弱。核心问题已转变：不是"产品好不好"，而是"这个概念是否被市场自然需要"？最大的风险是在没有尽职调查级证据的情况下进入市场。Tevo A.I.就是为此而生。' },
         { title: '宏观层——AI市场证据系统（我的架构设计）', content: '流水线：语义主题包 → 可溯源爬取 → 去噪与聚类 → 提取高频场景 → 整体确定性分数（0-1）。4项AI技术：NLP（解析社交评论、竞品菜单、公开讨论）、聚类与数据挖掘（去噪海量数据集）、机器学习（基于模式识别校准确定性评分）、推荐系统（微观层）。固定输出结构：执行摘要 + 市场格局 + 风险分析 + GO/条件推进/NO-GO决策。' },

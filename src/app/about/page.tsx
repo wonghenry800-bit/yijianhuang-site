@@ -51,7 +51,7 @@ export default function About() {
                 {lang === 'en' ? 'Yijian Huang' : '黄一健'}
               </h2>
               <p style={{ color: 'rgba(255,255,255,0.58)', fontSize: 15, lineHeight: 1.75, marginTop: 14 }}>
-                {lang === 'en' ? 'CUHK-Shenzhen · CEIBS MBA · ESCP MGM' : '港中深 · 中欧 MBA · ESCP MGM'}
+                {lang === 'en' ? 'CUHK-Shenzhen · CEIBS GMiM · ESCP GMiM' : '港中深 · 中欧 GMiM · ESCP GMiM'}
               </p>
             </div>
             <div className="cinematic-stat-grid">

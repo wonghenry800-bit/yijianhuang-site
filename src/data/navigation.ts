@@ -1,6 +1,6 @@
 import type { Language } from '../types/language';
 
-export const navItems = ['about', 'experience', 'research', 'campus', 'ai', 'photos', 'contact'] as const;
+export const navItems = ['about', 'experience', 'research', 'campus', 'portfolio', 'ai', 'photos', 'contact'] as const;
 
 export type NavItem = (typeof navItems)[number];
 
@@ -15,6 +15,7 @@ export const navLabels: Record<Language, Record<NavItem, string>> = {
     experience: 'Experience',
     research: 'Research',
     campus: 'Campus',
+    portfolio: 'Portfolio',
     ai: 'AI',
     photos: 'Photos',
     contact: 'Contact',
@@ -24,6 +25,7 @@ export const navLabels: Record<Language, Record<NavItem, string>> = {
     experience: '经历',
     research: '科研',
     campus: '校园',
+    portfolio: '作品集',
     ai: 'AI',
     photos: '相册',
     contact: '联系',
@@ -56,6 +58,11 @@ export const navDropdowns: Record<Language, Record<NavItem, NavLink[]>> = {
       { t: 'Cantonese Club', h: '/campus?i=0' },
       { t: 'Economics Club', h: '/campus?i=1' },
       { t: '"Go South" Project', h: '/campus?i=2' },
+    ],
+    portfolio: [
+      { t: 'Machine Learning', h: '/portfolio#machine-learning' },
+      { t: 'Writing Samples', h: '/portfolio#writing' },
+      { t: 'Download Resume', h: '/resume-yijian-huang.pdf' },
     ],
     ai: [
       { t: 'AI Tools Stack', h: '/ai' },
@@ -90,6 +97,11 @@ export const navDropdowns: Record<Language, Record<NavItem, NavLink[]>> = {
       { t: '粤语社', h: '/campus?i=0' },
       { t: '经济学会', h: '/campus?i=1' },
       { t: '"下南洋"项目', h: '/campus?i=2' },
+    ],
+    portfolio: [
+      { t: '机器学习', h: '/portfolio#machine-learning' },
+      { t: '研究作品', h: '/portfolio#writing' },
+      { t: '下载简历', h: '/resume-yijian-huang.pdf' },
     ],
     ai: [
       { t: 'AI工具栈', h: '/ai' },

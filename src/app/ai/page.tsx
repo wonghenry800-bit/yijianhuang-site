@@ -106,7 +106,7 @@ export default function AIPage() {
                 <div className="cinematic-card-content">
                   <span className="cinematic-chip" style={{ background: project.color }}>{project.status}</span>
                   <h3 className="cinematic-card-title">{project.name}</h3>
-                  <p className="cinematic-card-detail">{project.subtitle}</p>
+                  <p className="cinematic-card-detail">{project.summary}</p>
                   <div className="cinematic-pill-row" style={{ marginTop: 18 }}>
                     {project.tags.slice(0, 4).map(tag => <span className="cinematic-chip" key={tag}>{tag}</span>)}
                   </div>
@@ -141,7 +141,8 @@ export default function AIPage() {
                 <div style={{ fontSize: 24, fontWeight: 740, color: '#f5f5f7', letterSpacing: 0 }}>{projects[sel].name}</div>
                 <div style={{ fontSize: 13, color: '#bf5af2', marginTop: 4 }}>{projects[sel].course}</div>
                 <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.34)', marginTop: 4 }}>{lang === 'en' ? 'Team: ' : '团队：'}{projects[sel].team}</div>
-                <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.62)', lineHeight: 1.8, marginTop: 18 }}>{projects[sel].overview}</p>
+                <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.72)', lineHeight: 1.8, marginTop: 18 }}>{projects[sel].summary}</p>
+                <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.58)', lineHeight: 1.8, marginTop: 14 }}>{projects[sel].overview}</p>
                 {projects[sel].sections.map(section => (
                   <div key={section.title} style={{ marginTop: 18 }}>
                     <div style={{ fontSize: 11, fontWeight: 700, color: projects[sel].color, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 6 }}>{section.title}</div>
