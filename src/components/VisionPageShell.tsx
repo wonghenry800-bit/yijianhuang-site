@@ -1,6 +1,7 @@
 'use client';
 
 import type { CSSProperties, ReactNode } from 'react';
+import KineticLight from './KineticLight';
 
 type VisionPageShellProps = {
   children: ReactNode;
@@ -21,6 +22,7 @@ export default function VisionPageShell({
       <div className="vision-ambient" aria-hidden="true" />
       <div className="vision-ribbons" aria-hidden="true" />
       <div className="vision-mesh" aria-hidden="true" />
+      <KineticLight fixed />
       <div className="vision-content">{children}</div>
     </div>
   );

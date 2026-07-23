@@ -5,6 +5,8 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { useLanguage } from '../components/LanguageContext';
 import LiquidHeroScene from '../components/LiquidHeroScene';
+import KineticLight from '../components/KineticLight';
+import HomeScrollStory from '../components/HomeScrollStory';
 import Navbar from '../components/Navbar';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
@@ -29,6 +31,7 @@ export default function Home() {
 
       <section className="liquid-hero-section" style={{ minHeight: '100svh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '80px 24px 40px', position: 'relative', overflow: 'hidden' }}>
         <LiquidHeroScene />
+        <KineticLight intensity="hero" />
         <div className="home-hero-flow" aria-hidden="true" />
 
         <div style={{ maxWidth: 760, width: '100%', textAlign: 'center', position: 'relative' }}>
@@ -115,6 +118,8 @@ export default function Home() {
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.25)" strokeWidth="1.5"><path d="M12 5v14M19 12l-7 7-7-7" /></svg>
         </motion.a>
       </section>
+
+      <HomeScrollStory lang={lang} />
 
       <section id="overview" className="apple-section">
         <div className="apple-container">
