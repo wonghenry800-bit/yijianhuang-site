@@ -66,9 +66,9 @@ export const homeContent: Record<Language, HomeHeroContent> = {
   },
   cn: {
     name: '黄一健',
-    t1: '经济学。',
-    t2: '政策。',
-    t3: '影响力。',
+    t1: '经济学',
+    t2: '政策',
+    t3: '影响力',
     sub: '港中深 · 芝加哥大学 · 联合国日内瓦 · 国务院发展研究中心',
     introEyebrow: '个人工作系统',
     introTitle: '把研究、分析与 AI 工具放进同一个工作流。',
@@ -87,13 +87,13 @@ export const homeContent: Record<Language, HomeHeroContent> = {
 export const homeStats: Record<Language, HomeStat[]> = {
   en: [
     { n: '7+', l: 'Internships' },
-    { n: '4', l: 'Policy briefs' },
+    { n: '5', l: 'Research projects' },
     { n: '6', l: 'Languages' },
     { n: '3+', l: 'Countries' },
   ],
   cn: [
     { n: '7+', l: '实习经历' },
-    { n: '4', l: '政策简报' },
+    { n: '5', l: '研究项目' },
     { n: '6', l: '语言' },
     { n: '3+', l: '国家' },
   ],

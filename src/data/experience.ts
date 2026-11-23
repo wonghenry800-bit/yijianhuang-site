@@ -1,6 +1,17 @@
 export const expData = {
   en: [
     {
+      org: 'ByteDance (Douyin)', role: 'AI Research & Operations Intern', loc: 'Guangzhou', period: 'Jun 2026 – Sep 2026', present: false,
+      tags: ['AI Trend Research', 'Content & Events', 'AI Workflows'],
+      img: '/gallery/bytedance-logo.svg', abbr: 'BD', color: '#3c8cff',
+      url: 'https://www.bytedance.com',
+      detail: `ByteDance is a global technology company whose products include Douyin and TikTok. In the AI Research & Operations team at Douyin, I worked where AI trend research meets content, community and events.
+
+I tracked U.S. foundation-model releases, Chinese AI-app trends and competitor platforms daily, and combined them with youth user research and 6 case studies into 8 research and insight reports. I planned AI content topics and turned trend and user insights into 12 creative, shareable posts for the internal AI community, ranging from trend reads and product reviews to event recaps.
+
+I also supported 4 online and offline AI events — sharing sessions, bootcamps and a hackathon — reaching 150+ participants, covering planning, on-site execution and post-event review. Finally, I mapped how 3 business units were using AI and, applying Anthropic's AI workflow patterns, turned the findings into 2 new team workflows.`
+    },
+    {
       org: 'IQVIA Business Technology Consulting', role: 'Business Technology Consulting Intern', loc: 'Shanghai', period: 'Mar 2026 – Present', present: true,
       tags: ['Life Sciences IT', 'Business Analysis', 'AI Glass / E-Doc'],
       img: '/gallery/iqvia-logo.png', abbr: 'IQ', color: '#00a3e0',
@@ -55,6 +66,17 @@ For Bayer's AI Glass solution, I support solution research and business design a
     },
   ],
   cn: [
+    {
+      org: '字节跳动（抖音）', role: 'AI 研究与运营实习生', loc: '广州', period: '2026年6月 – 2026年9月', present: false,
+      tags: ['AI 趋势研究', '内容与活动', 'AI 工作流'],
+      img: '/gallery/bytedance-logo.svg', abbr: '字', color: '#3c8cff',
+      url: 'https://www.bytedance.com',
+      detail: `字节跳动是全球化科技公司，旗下产品包括抖音与 TikTok。我在抖音 AI 研究与运营团队实习，工作横跨 AI 趋势研究、内容、社区与活动运营。
+
+我每日跟踪美国基础模型、国内 AI 应用及竞品平台动态，结合年轻用户调研与 6 个案例研究，输出 8 份研究与洞察报告。同时参与 AI 内容策划，将趋势与用户洞察转化为 12 篇有创意、有传播力的内部 AI 社区内容，涵盖趋势解读、产品体验与活动复盘。
+
+此外，我支持了分享会、训练营、黑客松等 4 场 AI 线上线下活动，覆盖 150+ 人次，负责策划、落地执行与复盘；并参照 Anthropic 的 AI 工作流模式，梳理 3 个业务部门运用 AI 提效的做法，沉淀 2 套新工作流。`
+    },
     {
       org: 'IQVIA 商业科技咨询', role: '商业科技咨询实习生', loc: '上海', period: '2026年3月 – 至今', present: true,
       tags: ['医药数字化', '需求分析', 'AI眼镜/E-Doc'],
