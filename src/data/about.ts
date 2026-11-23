@@ -1,16 +1,16 @@
 export const eduData = {
   en: [
     {
-      abbr: 'CE', school: 'China Europe International Business School (CEIBS)', prog: 'Global Master in Management', period: '2026–2027', loc: 'Shanghai, China',
+      abbr: 'CE', school: 'China Europe International Business School (CEIBS)', prog: 'Global Master in Management (CEIBS × ESCP Dual Degree)', period: 'Sep 2026 – Aug 2028 (expected)', loc: 'Shanghai, China',
       url: 'https://www.ceibs.edu',
       imgs: ['/gallery/ceibs.jpg'],
-      detail: `Founded in 1994 through a partnership between the Chinese government and the European Commission, CEIBS (中欧国际工商学院) is one of Asia's leading business schools, headquartered in Shanghai with campuses and offices across China, Europe, and Africa.\n\nThe CEIBS Global Master in Management is a graduate management program focused on China depth, global business fundamentals, strategy, finance, operations, innovation, and cross-cultural leadership. The program supports my transition from economics and policy research into applied management, consulting, and technology-enabled business problem solving.`
+      detail: `Founded in 1994 through a partnership between the Chinese government and the European Commission, CEIBS (中欧国际工商学院) is one of Asia's leading business schools, headquartered in Shanghai with campuses and offices across China, Europe, and Africa.\n\nThe CEIBS Global Master in Management is a graduate management program focused on China depth, global business fundamentals, strategy, finance, operations, innovation, and cross-cultural leadership. The program supports my transition from economics and policy research into applied management, consulting, and technology-enabled business problem solving.\n\nThe programme is a dual degree with ESCP Business School: English-taught, with a multinational cohort, running from Shanghai to Paris, London and Zurich.`
     },
     {
-      abbr: 'ES', school: 'ESCP Business School', prog: 'Global Master in Management', period: '2027–2029', loc: 'Paris / Berlin / London / Madrid / Turin / Warsaw',
+      abbr: 'ES', school: 'ESCP Business School', prog: 'Global Master in Management (CEIBS × ESCP Dual Degree)', period: 'Sep 2026 – Aug 2028 (expected)', loc: 'Paris / London / Zurich',
       url: 'https://www.escp.eu',
       imgs: ['/gallery/ESCP.jpg'],
-      detail: `Founded in 1819, ESCP is the world's oldest business school and one of Europe's leading management institutions. The Global Master in Management offers a pan-European academic experience across ESCP's campuses in Paris, Berlin, London, Madrid, Turin, and Warsaw.\n\nThe program emphasizes strategic management, international finance, cross-cultural leadership, digital transformation, and consulting-style problem solving. It is designed for graduates building careers across borders, combining academic rigor with real-world projects and a global alumni network.`
+      detail: `Founded in 1819, ESCP is the world's oldest business school and one of Europe's leading management institutions. As part of the CEIBS × ESCP dual-degree Global Master in Management, my studies continue in Europe across Paris, London and Zurich.\n\nThe program emphasizes strategic management, international finance, cross-cultural leadership, digital transformation, and consulting-style problem solving. It is designed for graduates building careers across borders, combining academic rigor with real-world projects and a global alumni network.`
     },
     {
       abbr: 'CU', school: 'The Chinese University of Hong Kong, Shenzhen', prog: 'BSc in Economics (Applied Economics), Minor in Philosophy', period: '2022–2026', loc: 'Shenzhen, China',
@@ -33,16 +33,16 @@ export const eduData = {
   ],
   cn: [
     {
-      abbr: 'CE', school: '中欧国际工商学院（CEIBS）', prog: 'Global Master in Management', period: '2026–2027', loc: '上海',
+      abbr: 'CE', school: '中欧国际工商学院（CEIBS）', prog: 'Global Master in Management（中欧 × ESCP 双学位）', period: '2026年9月 – 2028年8月（预计）', loc: '上海',
       url: 'https://www.ceibs.edu',
       imgs: ['/gallery/ceibs.jpg'],
-      detail: `中欧国际工商学院（CEIBS）创立于1994年，由中国政府与欧盟共同发起，是亚洲领先的商学院之一，总部位于上海，并在中国、欧洲与非洲设有校区及办公室。\n\nGlobal Master in Management 项目聚焦中国深度、全球商业基础、战略、金融、运营、创新与跨文化领导力。该项目承接我的经济学与政策研究背景，进一步拓展到管理实践、咨询方法和技术驱动的商业问题解决。`
+      detail: `中欧国际工商学院（CEIBS）创立于1994年，由中国政府与欧盟共同发起，是亚洲领先的商学院之一，总部位于上海，并在中国、欧洲与非洲设有校区及办公室。\n\nGlobal Master in Management 项目聚焦中国深度、全球商业基础、战略、金融、运营、创新与跨文化领导力。该项目承接我的经济学与政策研究背景，进一步拓展到管理实践、咨询方法和技术驱动的商业问题解决。\n\n这是与 ESCP 商学院合办的双学位项目，全英文授课、同学来自多个国家，学习地点从上海延伸到巴黎、伦敦和苏黎世。`
     },
     {
-      abbr: 'ES', school: 'ESCP商学院', prog: 'Global Master in Management', period: '2027–2029', loc: '巴黎/柏林/伦敦/马德里/都灵/华沙',
+      abbr: 'ES', school: 'ESCP商学院', prog: 'Global Master in Management（中欧 × ESCP 双学位）', period: '2026年9月 – 2028年8月（预计）', loc: '巴黎/伦敦/苏黎世',
       url: 'https://www.escp.eu',
       imgs: ['/gallery/ESCP.jpg'],
-      detail: `ESCP创立于1819年，是全球历史最悠久的商学院，也是欧洲领先的管理学院之一。Global Master in Management 提供横跨巴黎、柏林、伦敦、马德里、都灵、华沙多校区的泛欧洲学习体验。\n\n项目聚焦战略管理、国际金融、跨文化领导力、数字化转型与咨询式问题解决，适合希望在跨国环境中发展的学生，将严谨学术训练与真实项目经验结合。`
+      detail: `ESCP创立于1819年，是全球历史最悠久的商学院，也是欧洲领先的管理学院之一。作为中欧 × ESCP 双学位 Global Master in Management 的一部分，我将在巴黎、伦敦和苏黎世继续欧洲阶段的学习。\n\n项目聚焦战略管理、国际金融、跨文化领导力、数字化转型与咨询式问题解决，适合希望在跨国环境中发展的学生，将严谨学术训练与真实项目经验结合。`
     },
     {
       abbr: 'CU', school: '香港中文大学（深圳）', prog: '经济学学士（应用经济学），辅修哲学', period: '2022–2026', loc: '深圳',
@@ -117,7 +117,7 @@ export const aboutCards: Record<'en' | 'cn', AboutCard[]> = {
   en: [
     {
       icon: '🎯', t: "Hi — I'm Yijian (Henry)",
-      b: 'Explorer navigating Economics, Philosophy, AI and Policy simultaneously. CUHK-Shenzhen economics undergraduate, CEIBS Global Master in Management 2026, heading to ESCP Global Master in Management in 2027.',
+      b: 'Explorer navigating Economics, Philosophy, AI and Policy simultaneously. CUHK-Shenzhen economics graduate, now in the CEIBS × ESCP dual-degree Global Master in Management (2026–2028) across Shanghai, Paris, London and Zurich.',
       kicker: 'Someone who moves between disciplines',
       article: [
         { h: 'Who I am', p: [
@@ -245,7 +245,7 @@ export const aboutCards: Record<'en' | 'cn', AboutCard[]> = {
   cn: [
     {
       icon: '🎯', t: '你好，我是黄一健',
-      b: '在经济学、哲学、AI与政策之间自由穿梭的探索者。港中深经济学本科，2026年入读中欧 Global Master in Management，2027年前往 ESCP Global Master in Management 深造。',
+      b: '在经济学、哲学、AI与政策之间自由穿梭的探索者。港中深经济学本科，2026年起就读中欧 × ESCP 双学位 Global Master in Management（2026–2028），学习地点横跨上海、巴黎、伦敦与苏黎世。',
       kicker: '一个在学科之间穿行的人',
       article: [
         { h: '我是谁', p: [
