@@ -1,6 +1,6 @@
 import type { Language } from '../types/language';
 
-export const navItems = ['about', 'experience', 'research', 'campus', 'portfolio', 'ai', 'photos', 'contact'] as const;
+export const navItems = ['about', 'education', 'experience', 'research', 'campus', 'portfolio', 'ai', 'photos', 'contact'] as const;
 
 export type NavItem = (typeof navItems)[number];
 
@@ -12,6 +12,7 @@ export type NavLink = {
 export const navLabels: Record<Language, Record<NavItem, string>> = {
   en: {
     about: 'About',
+    education: 'Education',
     experience: 'Experience',
     research: 'Research',
     campus: 'Campus',
@@ -22,6 +23,7 @@ export const navLabels: Record<Language, Record<NavItem, string>> = {
   },
   cn: {
     about: '关于',
+    education: '教育',
     experience: '经历',
     research: '科研',
     campus: '校园',
@@ -36,17 +38,24 @@ export const navDropdowns: Record<Language, Record<NavItem, NavLink[]>> = {
   en: {
     about: [
       { t: 'Introduction', h: '/about' },
-      { t: 'Education', h: '/about#education' },
       { t: 'Languages & Skills', h: '/about#skills' },
     ],
+    education: [
+      { t: 'CEIBS', h: '/education?i=0' },
+      { t: 'ESCP Business School', h: '/education?i=1' },
+      { t: 'CUHK-Shenzhen', h: '/education?i=2' },
+      { t: 'UChicago Harris', h: '/education?i=3' },
+      { t: 'The University of Hong Kong', h: '/education?i=4' },
+    ],
     experience: [
-      { t: 'IQVIA Consulting', h: '/experience?i=0' },
-      { t: 'State Council DRC', h: '/experience?i=1' },
-      { t: 'HKU Centre for AI', h: '/experience?i=2' },
-      { t: 'NetEase Interactive', h: '/experience?i=3' },
-      { t: 'UN Youth Program', h: '/experience?i=4' },
-      { t: 'UNDP China', h: '/experience?i=5' },
-      { t: 'Rongtai VC', h: '/experience?i=6' },
+      { t: 'ByteDance (Douyin)', h: '/experience?i=0' },
+      { t: 'IQVIA Consulting', h: '/experience?i=1' },
+      { t: 'State Council DRC', h: '/experience?i=2' },
+      { t: 'HKU Centre for AI', h: '/experience?i=3' },
+      { t: 'NetEase Interactive', h: '/experience?i=4' },
+      { t: 'UN Youth Program', h: '/experience?i=5' },
+      { t: 'UNDP China', h: '/experience?i=6' },
+      { t: 'Rongtai VC', h: '/experience?i=7' },
     ],
     research: [
       { t: 'Healthcare Governance GBA', h: '/research?i=0' },
@@ -75,17 +84,24 @@ export const navDropdowns: Record<Language, Record<NavItem, NavLink[]>> = {
   cn: {
     about: [
       { t: '个人介绍', h: '/about' },
-      { t: '教育背景', h: '/about#education' },
       { t: '语言与技能', h: '/about#skills' },
     ],
+    education: [
+      { t: '中欧国际工商学院', h: '/education?i=0' },
+      { t: 'ESCP商学院', h: '/education?i=1' },
+      { t: '香港中文大学（深圳）', h: '/education?i=2' },
+      { t: '芝加哥大学哈里斯学院', h: '/education?i=3' },
+      { t: '香港大学', h: '/education?i=4' },
+    ],
     experience: [
-      { t: 'IQVIA 商业科技咨询', h: '/experience?i=0' },
-      { t: '国务院发展研究中心', h: '/experience?i=1' },
-      { t: '香港大学AI中心', h: '/experience?i=2' },
-      { t: '网易互娱', h: '/experience?i=3' },
-      { t: '联合国青年项目', h: '/experience?i=4' },
-      { t: 'UNDP中国', h: '/experience?i=5' },
-      { t: '融泰私募', h: '/experience?i=6' },
+      { t: '字节跳动（抖音）', h: '/experience?i=0' },
+      { t: 'IQVIA 商业科技咨询', h: '/experience?i=1' },
+      { t: '国务院发展研究中心', h: '/experience?i=2' },
+      { t: '香港大学AI中心', h: '/experience?i=3' },
+      { t: '网易互娱', h: '/experience?i=4' },
+      { t: '联合国青年项目', h: '/experience?i=5' },
+      { t: 'UNDP中国', h: '/experience?i=6' },
+      { t: '融泰私募', h: '/experience?i=7' },
     ],
     research: [
       { t: '粤港澳医疗治理', h: '/research?i=0' },

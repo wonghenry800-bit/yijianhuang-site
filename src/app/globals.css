@@ -2042,3 +2042,35 @@ button.cinematic-card {
     transform: none;
   }
 }
+
+button.cinematic-text-tile {
+  cursor: pointer;
+  font: inherit;
+  width: 100%;
+}
+
+.cinematic-read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+  color: #64d2ff;
+  font-size: 12px;
+  font-weight: 650;
+  opacity: 0.82;
+  transition: opacity 0.2s, gap 0.2s;
+}
+
+button.cinematic-text-tile:hover .cinematic-read-more,
+button.cinematic-text-tile:focus-visible .cinematic-read-more {
+  opacity: 1;
+  gap: 9px;
+}
+
+@media (max-width: 640px) {
+  .about-article header,
+  .about-article > div {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}

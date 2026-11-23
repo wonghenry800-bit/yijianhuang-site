@@ -1,23 +1,37 @@
 'use client';
 
 import type { CSSProperties } from 'react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
 import { AnimatePresence, motion } from 'framer-motion';
-import ImageCarousel from '../../components/ImageCarousel';
 import { useLanguage } from '../../components/LanguageContext';
 import Navbar from '../../components/Navbar';
 import VisionPageShell from '../../components/VisionPageShell';
-import { aboutCards, eduData, langs, skillsDetailed } from '../../data/about';
+import { aboutCards, langs, skillsDetailed } from '../../data/about';
 import { publicImage } from '../../utils/publicImage';
 
 export default function About() {
   const { lang, setLang } = useLanguage();
-  const [selEdu, setSelEdu] = useState<number | null>(null);
+  const [selCard, setSelCard] = useState<number | null>(null);
   const [selSkill, setSelSkill] = useState<number | null>(null);
-  const edu = eduData[lang];
   const cards = aboutCards[lang];
   const skills = skillsDetailed[lang];
+  const card = selCard !== null ? cards[selCard] : null;
+
+  useEffect(() => {
+    if (selCard === null) return;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setSelCard(null);
+    };
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    window.addEventListener('keydown', onKey);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener('keydown', onKey);
+    };
+  }, [selCard]);
 
   return (
     <VisionPageShell dark accent="#2997ff">
@@ -69,8 +83,11 @@ export default function About() {
           </div>
           <div className="cinematic-container cinematic-grid">
             {cards.map((card, i) => (
-              <motion.div
+              <motion.button
+                type="button"
                 key={card.t}
+                onClick={() => setSelCard(i)}
+                aria-haspopup="dialog"
                 className={`cinematic-text-tile liquid-glass-panel vision-interactive-card ${i === 0 ? 'cinematic-card--wide' : ''}`}
                 initial={{ opacity: 0, y: 24, filter: 'blur(10px)' }}
                 whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
@@ -81,49 +98,17 @@ export default function About() {
                 <div>
                   <h3>{card.t}</h3>
                   <p>{card.b}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </section>
-
-        <section className="cinematic-section">
-          <div className="apple-section-header">
-            <p className="apple-eyebrow" style={{ color: '#64d2ff', marginBottom: 14 }}>{lang === 'en' ? 'Education' : '教育背景'}</p>
-            <h2 className="apple-section-title">{lang === 'en' ? 'Built through different cities and institutions.' : '在不同城市与机构中形成的知识结构。'}</h2>
-          </div>
-          <div className="cinematic-container cinematic-grid">
-            {edu.map((item, i) => (
-              <motion.button
-                type="button"
-                key={item.school}
-                className={`cinematic-card liquid-glass-panel vision-interactive-card ${i === 0 ? 'cinematic-card--wide' : ''}`}
-                onClick={() => setSelEdu(i)}
-                initial={{ opacity: 0, y: 30, filter: 'blur(12px)' }}
-                whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-                viewport={{ once: true, amount: 0.18 }}
-                transition={{ delay: Math.min(i * 0.05, 0.25), duration: 0.62, ease: [0.22, 1, 0.36, 1] }}
-              >
-                <div className="cinematic-card-media">
-                  <Image src={publicImage(item.imgs[0])} alt={item.school} fill sizes="(max-width: 900px) 100vw, 520px" style={{ objectFit: 'cover' }} />
-                </div>
-                <div className="cinematic-card-content">
-                  <span className="cinematic-chip">{item.abbr}</span>
-                  <h3 className="cinematic-card-title">{item.school}</h3>
-                  <p className="cinematic-card-detail">{item.prog}</p>
-                  <div className="cinematic-card-footer">
-                    <span>{item.loc} · {item.period}</span>
-                    <span className="apple-card-arrow" aria-hidden="true">
-                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M7 17L17 7M9 7h8v8" /></svg>
-                    </span>
-                  </div>
+                  <span className="cinematic-read-more">
+                    {lang === 'en' ? 'Read more' : '阅读全文'}
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" /></svg>
+                  </span>
                 </div>
               </motion.button>
             ))}
           </div>
         </section>
 
-        <section className="cinematic-section">
+        <section id="skills" className="cinematic-section">
           <div className="cinematic-container cinematic-grid">
             <div className="cinematic-text-tile cinematic-text-tile--half liquid-glass-panel">
               <span className="cinematic-chip">{lang === 'en' ? 'Languages' : '语言能力'}</span>
@@ -175,31 +160,51 @@ export default function About() {
       </main>
 
       <AnimatePresence>
-        {selEdu !== null && (
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setSelEdu(null)}
-            style={{ position: 'fixed', inset: 0, zIndex: 200, display: 'flex', alignItems: 'flex-start', justifyContent: 'center', padding: '40px 24px', background: 'rgba(0,0,0,0.68)', backdropFilter: 'blur(26px)', overflowY: 'auto' }}>
-            <motion.div initial={{ scale: 0.94, y: 22, opacity: 0, filter: 'blur(12px)' }} animate={{ scale: 1, y: 0, opacity: 1, filter: 'blur(0px)' }} exit={{ scale: 0.95, opacity: 0, filter: 'blur(10px)' }}
+        {card && (
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setSelCard(null)}
+            style={{ position: 'fixed', inset: 0, zIndex: 200, display: 'flex', alignItems: 'flex-start', justifyContent: 'center', padding: '56px 16px 40px', background: 'rgba(0,0,0,0.68)', backdropFilter: 'blur(26px)', WebkitBackdropFilter: 'blur(26px)', overflowY: 'auto' }}>
+            <motion.article
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="about-article-title"
+              initial={{ scale: 0.94, y: 22, opacity: 0, filter: 'blur(12px)' }} animate={{ scale: 1, y: 0, opacity: 1, filter: 'blur(0px)' }} exit={{ scale: 0.95, opacity: 0, filter: 'blur(10px)' }}
               transition={{ type: 'spring', damping: 28, stiffness: 300 }}
               onClick={event => event.stopPropagation()}
-              className="liquid-glass-panel"
-              style={{ background: '#1c1c1e', borderRadius: 24, maxWidth: 680, width: '100%', overflow: 'hidden', border: '0.5px solid rgba(255,255,255,0.12)', boxShadow: '0 32px 80px rgba(0,0,0,0.5)' }}>
-              <ImageCarousel imgs={edu[selEdu].imgs} alt={edu[selEdu].school} background="#2c2c2e" controlSize={30} />
-              <div style={{ padding: 28 }}>
-                <div style={{ display: 'inline-block', fontSize: 10, fontWeight: 700, padding: '3px 10px', borderRadius: 100, background: '#2997ff', color: '#fff', marginBottom: 12 }}>{edu[selEdu].abbr}</div>
-                <div style={{ fontSize: 24, fontWeight: 740, color: '#f5f5f7', letterSpacing: 0 }}>{edu[selEdu].school}</div>
-                <div style={{ fontSize: 14, color: '#64d2ff', marginTop: 4 }}>{edu[selEdu].prog}</div>
-                <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.34)', marginTop: 4 }}>{edu[selEdu].loc} · {edu[selEdu].period}</div>
-                <a href={edu[selEdu].url} target="_blank" rel="noopener noreferrer"
-                  style={{ display: 'inline-flex', alignItems: 'center', gap: 4, fontSize: 12, color: '#64d2ff', marginTop: 8, textDecoration: 'none' }}>
-                  {edu[selEdu].url}
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" /></svg>
-                </a>
-                <div style={{ fontSize: 14, color: 'rgba(255,255,255,0.62)', marginTop: 18, lineHeight: 1.85, whiteSpace: 'pre-line' }}>{edu[selEdu].detail}</div>
-                <button className="liquid-glass-button liquid-glass-button--primary" onClick={() => setSelEdu(null)} style={{ marginTop: 24, width: '100%', padding: '12px 0', borderRadius: 100, color: '#fff', fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
-                  {lang === 'en' ? 'Close' : '关闭'}
-                </button>
+              className="liquid-glass-panel about-article"
+              style={{ background: '#1c1c1e', borderRadius: 28, maxWidth: 720, width: '100%', overflow: 'hidden', border: '0.5px solid rgba(255,255,255,0.12)', boxShadow: '0 32px 80px rgba(0,0,0,0.5)', position: 'relative' }}>
+              <button type="button" onClick={() => setSelCard(null)} aria-label={lang === 'en' ? 'Close' : '关闭'} className="liquid-glass-button"
+                style={{ position: 'absolute', top: 18, right: 18, width: 34, height: 34, borderRadius: 999, display: 'grid', placeItems: 'center', color: '#f5f5f7', cursor: 'pointer', zIndex: 1 }}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
+              </button>
+              <header style={{ padding: '34px 30px 26px', background: 'linear-gradient(160deg, rgba(41,151,255,0.22) 0%, rgba(28,28,30,0) 70%)', borderBottom: '0.5px solid rgba(255,255,255,0.08)' }}>
+                <div className="cinematic-icon-mark" style={{ background: selCard === 0 ? '#2997ff' : 'rgba(255,255,255,0.12)' }}>{card.icon}</div>
+                <p style={{ marginTop: 20, color: '#64d2ff', fontSize: 12, fontWeight: 700, letterSpacing: '0.04em' }}>{card.kicker}</p>
+                <h2 id="about-article-title" style={{ marginTop: 8, color: '#f5f5f7', fontSize: 'clamp(26px, 4vw, 38px)', lineHeight: 1.12, fontWeight: 780, letterSpacing: 0, paddingRight: 36 }}>{card.t}</h2>
+                <p style={{ marginTop: 12, color: 'rgba(255,255,255,0.58)', fontSize: 14, lineHeight: 1.75 }}>{card.b}</p>
+              </header>
+              <div style={{ padding: '8px 30px 30px' }}>
+                {card.article.map(section => (
+                  <section key={section.h} style={{ marginTop: 26 }}>
+                    <h3 style={{ color: '#f5f5f7', fontSize: 18, fontWeight: 720, lineHeight: 1.35 }}>{section.h}</h3>
+                    {section.p.map(paragraph => (
+                      <p key={paragraph.slice(0, 32)} style={{ marginTop: 10, color: 'rgba(255,255,255,0.7)', fontSize: 15, lineHeight: 1.9 }}>{paragraph}</p>
+                    ))}
+                  </section>
+                ))}
+                <div style={{ display: 'flex', gap: 10, marginTop: 32, flexWrap: 'wrap' }}>
+                  {card.cta && (
+                    <Link href={card.cta.href} className="liquid-glass-button liquid-glass-button--primary"
+                      style={{ flex: '1 1 200px', textAlign: 'center', padding: '12px 0', borderRadius: 100, color: '#fff', fontSize: 13, fontWeight: 600, textDecoration: 'none' }}>
+                      {card.cta.label}
+                    </Link>
+                  )}
+                  <button type="button" className={`liquid-glass-button ${card.cta ? '' : 'liquid-glass-button--primary'}`} onClick={() => setSelCard(null)}
+                    style={{ flex: '1 1 200px', padding: '12px 0', borderRadius: 100, color: '#fff', fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
+                    {lang === 'en' ? 'Close' : '关闭'}
+                  </button>
+                </div>
               </div>
-            </motion.div>
+            </motion.article>
           </motion.div>
         )}
       </AnimatePresence>
